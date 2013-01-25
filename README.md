@@ -6,11 +6,11 @@
 	$ ln -s ~/.rcfiles/cshrc ~/.cshrc 
 #### Bashrc
 	$ ln -s ~/.rcfiles/bashrc ~/.bashrc 
-#### vimrc
+#### Vimrc
 	$ mkdir -p ~/.vim/bundle
 	$ git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	$ ln -s ~/.rcfiles/vimrc ~/.vimrc 
 	
-##### Then, in vim
+##### Then, in Vim
 	
 	: BundleInstall

@@ -132,7 +132,7 @@ function _seperated_prompt {
     local fillsize=$((${COLUMNS}-${#temp}))
     fill=`perl -e "print '-'x$fillsize if $fillsize > 0;"`
     # ★ ❤
-    export PS1="\n\[\e[1;35m\]\A \[\e[1;35m\][\${newPWD}] \[\e[0;35m\]\$(git_branch)\[\e[0;37m\]\${fill}\n\[\e[0m\]$ "
+    export PS1="\n\[\e[1;33m\]\A \[\e[1;33m\][\${newPWD}] \[\e[0;35m\]\$(git_branch)\[\e[0;37m\]\${fill}\n\[\e[0m\]$ "
 }
 
 # for powerline-bash

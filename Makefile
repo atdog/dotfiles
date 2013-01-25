@@ -7,6 +7,9 @@
 .muttrc:
 	ln -s ${HOME}/.rcfiles/muttrc ${HOME}/.muttrc 
 
+.gitconfig:
+	ln -s ${HOME}/.rcfiles/gitconfig ${HOME}/.gitconfig
+
 .vimrc:
 	mkdir -p ${HOME}/.vim/bundle
 	mkdir -p ${HOME}/.vim/temp
@@ -19,6 +22,7 @@
 	vim '+BundleInstall'
 
 clean:
+	rm -rf ${HOME}/.gitconfig
 	rm -rf ${HOME}/.cshrc
 	rm -rf ${HOME}/.bashrc
 	rm -rf ${HOME}/.muttrc

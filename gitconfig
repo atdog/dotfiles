@@ -1,0 +1,12 @@
+[user]
+    name = Hung-Chi Su
+    email = atdog.cs96@gmail.com
+[core]
+    editor = /usr/local/bin/vim
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+[color]
+    ui = true

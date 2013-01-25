@@ -3,6 +3,9 @@
 ##### Download Repository
 	$ git clone git@github.com:atdog/rcfiles.git ${HOME}/.rcfiles
 	
+#### git config
+	$ ln -s ${HOME}/.rcfiles/gitconfig ${HOME}/.gitconfig 
+
 #### cshrc
 	$ ln -s ${HOME}/.rcfiles/cshrc ${HOME}/.cshrc 
 	

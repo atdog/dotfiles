@@ -2,6 +2,8 @@
 
 ##### Download Repository
 	$ git clone git@github.com:atdog/rcfiles.git ~/.rcfiles
+#### Tcshrc
+	$ ln -s ~/.rcfiles/cshrc ~/.cshrc 
 #### Bashrc
 	$ ln -s ~/.rcfiles/bashrc ~/.bashrc 
 #### vimrc

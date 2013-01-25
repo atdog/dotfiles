@@ -158,7 +158,9 @@ autocmd BufReadPost *
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python autocomplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType python python import sys ; sys.path.append("/usr/local/lib/python2.7/site-packages/androguard-1.5-py2.7.egg")
+if filereadable("/usr/local/lib/python2.7/site-packages/androguard-1.5-py2.7.egg")
+    autocmd FileType python python import sys ; sys.path.append("/usr/local/lib/python2.7/site-packages/androguard-1.5-py2.7.egg")
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

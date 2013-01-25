@@ -1,24 +1,24 @@
 ### Run command files
 
 ##### Download Repository
-	$ git clone git@github.com:atdog/rcfiles.git ~/.rcfiles
+	$ git clone git@github.com:atdog/rcfiles.git ${HOME}/.rcfiles
 #### Tcshrc
-	$ ln -s ~/.rcfiles/cshrc ~/.cshrc 
+	$ ln -s ${HOME}/.rcfiles/cshrc ${HOME}/.cshrc 
 #### Bashrc
-	$ ln -s ~/.rcfiles/bashrc ~/.bashrc 
+	$ ln -s ${HOME}/.rcfiles/bashrc ${HOME}/.bashrc 
 #### Vimrc
-	$ mkdir -p ~/.vim/bundle
-	$ mkdir -p ~/.vim/temp
-	$ mkdir -p ~/.vim/undo
-	$ mkdir -p ~/.vim/session
-	$ mkdir -p ~/.vim/backup
-	$ git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	$ ln -s ~/.rcfiles/vimrc ~/.vimrc 
-    $ ln -s ~/.rcfiles/vimcolors ~/.vim/colors
+	$ mkdir -p ${HOME}/.vim/bundle
+	$ mkdir -p ${HOME}/.vim/temp
+	$ mkdir -p ${HOME}/.vim/undo
+	$ mkdir -p ${HOME}/.vim/session
+	$ mkdir -p ${HOME}/.vim/backup
+	$ git clone git://github.com/gmarik/vundle.git ${HOME}/.vim/bundle/vundle
+	$ ln -s ${HOME}/.rcfiles/vimrc ${HOME}/.vimrc 
+    $ ln -s ${HOME}/.rcfiles/vimcolors ${HOME}/.vim/colors
 	
 ##### Then, in Vim
 	
 	: BundleInstall
 
 #### Muttrc
-    $ ln -s ~/.rcfiles/muttrc ~/.muttrc
+    $ ln -s ${HOME}/.rcfiles/muttrc ${HOME}/.muttrc

@@ -6,6 +6,7 @@ export ARCHFLAGS="-arch x86_64"
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21
+export tor="140.113.208.227:65000"
 
 # for autojump
 [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
@@ -55,7 +56,7 @@ csie () {
 
 
 alias sr="screen -rdaA"
-alias pssh='ssh -o "ProxyCommand /usr/bin/nc -x 140.113.208.227:65000 %h %p"'
+alias pssh="ssh -o 'ProxyCommand /usr/bin/nc -x $tor %h %p'"
 alias sc="screen"
 alias grep="grep --color"
 alias rm="rm -i"
@@ -67,7 +68,7 @@ alias ls="ls -GF"
 alias cp="cp -i"
 alias cls="clear"
 alias ip="echo \`curl -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
-alias tip="echo \`curl --socks4 140.113.208.227:65000 -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
+alias tip="echo \`curl --socks4 $tor -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;

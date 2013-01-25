@@ -19,3 +19,6 @@
 ##### Then, in Vim
 	
 	: BundleInstall
+
+#### Muttrc
+    $ ln -s ~/.rcfiles/muttrc ~/.muttrc

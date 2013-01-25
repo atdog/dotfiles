@@ -1,0 +1,183 @@
+reset all
+
+#set abort_unmodified=yes	# automatically abort replies if I don't
+set from="蘇宏麒"
+set realname="Hung-Chi Su"
+set alias_file="$HOME/.mutt/alias"	# where I keep my aliases
+unset allow_8bit		# never do QP encoding on legal 8-bit chars
+set allow_ansi
+set assumed_charset="utf-8:big5:gb2312"
+unset ascii_chars		# Use ASCII chars for threading arrows.
+set autoedit			# go to the editor right away when composing
+set beep			# beep on certain user errors and other errors
+set beep_new			# beep on new mail
+set charset="UTF-8"
+set content_type="text/plain"	# default Content-Type of message body
+set digest_collapse		# show digest parts in 'v' submenu
+set dsn_notify="failure,delay"	# delivery status notification 
+set dsn_return="hdrs"		# what to return with DSN (hdrs or full)
+set duplicate_threads		# thread messages with same message-id together
+set edit_headers		# let me edit the message header when composing
+set editor="vim"
+set folder="$HOME/Mail"		# where i keep my mailboxes
+set fcc_attach			# store attachments too when doing a Fcc
+set followup_to			# Add Mail-Followup-To header.
+set forward_decode		# decode messages when forwarding without MIME
+set forward_decrypt		# decrypt PGP message, when mime_forward and !mime_fw_d
+unset forward_quote		# quote forwarded message, if not $mime_forward
+set hdrs			# nohdrs implies not to write my_hdr into mail.
+unset header			# quote full header on reply
+set help			# show the help lines
+unset hidden_host		# when set, skip the host name part of hostname
+unset hide_limited		# don't hide presence of missing messages in thread
+unset hide_missing		# don't hide messages hidden by limit in thread
+unset hide_top_limited		# don't hide hide missing messages at top of thread
+set hide_top_missing		# hide messages hidden by limit at top of thread
+set history=20			# number of lines of history to remember
+set ignore_list_reply_to	# ignore Reply-To pointing back to mailinglist
+unset implicit_autoview		# use autoview, if a "copiousoutput" is in mailcap.
+set include			# always include messages when replying
+set indent_string="> "		# how to quote replied text
+set locale="UTF-8"
+set mail_check=3		# how often to poll for new mail
+set mailcap_path="$HOME/.mailcap"
+unset maildir_trash		# if set: use maildir trash flag instead of removing
+unset mark_old			# Don't mark unread new msgs as old.
+set markers			# put a '+' at the beginning of wrapped lines.
+set mbox="$HOME/Mail"		# where to store read messages
+set menu_move_off		# unset => bottom entry of menu will never scroll up
+unset menu_scroll		# scroll on last line of menu (set) or do a nextpage?
+unset meta_key			# Don't interpret Alt-x as ESC x
+unset metoo			# should we keep ourselves in group replies?
+set mime_forward		# use message/rfc822 type to forward messages
+unset mime_forward_decode	# decode messages when forwarding with MIME
+unset move
+unset narrow_tree		# Don't make tree narrower
+set pager_context=1		# number of lines, to display twice on PgUp/Down
+set pager_index_lines=10	# how many index lines to show in the pager
+set pager_stop			# don't move to the next message on next-page
+unset pipe_decode		# Don't decode messages when piping.
+unset pipe_split		# split tagged messages (or don't) when using "|"
+set post_indent_string=""	# Footer (after quotes, before signature).
+set postponed=+postponed	# mailbox to store postponed messages in
+set print_decode		# decode before sending to $print_command
+set prompt_after		# ask me for a command after the external pager exits
+set quit=ask-yes
+set read_inc=25			# show progress when reading a mailbox
+set record=+outbox		# default location to save outgoing mail
+set reply_to			# always use reply-to if present
+set reply_regexp="^([Rr][Ee]:[ \t]*)+"	# how to identify replies in the subject:
+set resolve			# move to the next message when an action is performed
+set reverse_alias		# use realname from reverse alias lookup
+set reverse_name		# use my address as it appears in the message I am replying to
+set rfc2047_parameters		# decode QP code
+set send_charset="utf-8:big5:gb2312:us-ascii:iso-8859-1"
+set signature="$HOME/.sig/mail"	# file which contains my signature
+set smart_wrap			# wrap long lines at word boundary.
+set sort=threads		# primary sorting method
+set sort_aux=date		# sorting the threads
+set sort_alias=alias
+set sort_browser=alpha		# how to sort files in the dir browser
+set sort_re			# set: only put a child in a thread, if starts with Re:
+unset strict_threads		# thread only by In-Reply-To/References or by Subject.
+set thorough_search		# MIME decode before searching.
+set thread_received		# Use received date instead of Date: for threading
+set tilde			# virtual lines to pad blank lines in the pager
+set timeout=60			# time in seconds, till Mutt looks for new mail
+set tmpdir="$HOME/tmp"		# where to store temp files
+set to_chars=" +TCF "		# no to me, only to me, not only to me, Cc: to me,
+				# from me, to subscribed mailinglist.
+unset use_8bitmime		# enable the -B8BITMIME sendmail flag
+set use_domain			# don't qualify local addresses with $domain
+set use_from			# always generate the `From:' header field
+set user_agent			# Create User-Agent: Mutt/<Version> header.
+set weed			# weed headers, when forwarding with forward_decode
+set wrap_search			# Wrap search to top/bottom.
+set wrapmargin=0		# margin left at right when doing smart line wrapping
+set write_inc=25		# show progress while writing mailboxes
+
+# alias_format
+# (format of data displayed for the alias menu)
+# %a alias name    %n index number    %r address    %t tag-character 
+# %f flags (d for deleted)
+set alias_format="%4n %2f %t %-12a  %r"
+
+# %b # of folders with new mail			%d # of deleted msgs
+# %f mbox path		%F # of flagged msgs	%h hostname
+# %m total# of messages %M # of shown msgs	%n # of new msgs
+# %l bytes in mbox	%L size of limited msgs %o # of old msgs
+# %p # of postponed. msgs	%P percentage of the display             
+# %r readonly/changed   %s sorting method	%S sort_aux method
+# %t # of tagged msgs	%u # of unread msgs	%v Mutt version
+# %>X = right justify and pad with "X"	 %|X = pad with "X" to end of line
+# %?<sequence_char>?<optional_string>?   print <opt> iff <seq> is non zero
+# %?<sequence_char>?<if_string>&<else_string>?
+#set status_format="-%r-%v--[%?M?%M/?%m msgs%?n?, %n new?%?d?, %d del?%?F?, %F flag?%?t?, %t tag?%?p?, %p postp?%?b?, %b inc?%?l?, %l?]--(%f)--%s-%>-%P-"
+set status_format="-%r-hcsu@cs.nctu.edu.tw: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
+
+# attach_format
+# (controls the look of the compose and attach menu)
+# %c = requires charset conversion (n or c)	%C = Charset
+# %d = description	%D = deleted flag
+# %e = MIME content-transfer-encoding		%f = filename   
+# %I = disposition (I=inline, A=attachment)
+# %m = major MIME type	%M = MIME subtype	%n = attachment number
+# %s = size		%t = tagged flag	%T = tree
+# %u = unlink
+# %>X = right justify and pad with "X"	 %|X = pad with "X" to end of line
+#
+#set attach_format="%u%D%t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
+set attach_format="%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
+
+# compose_format
+# (Controls the status line of the compose menu)
+# %a = number of attachments	%h = local hostname
+# %l = approx. size of msg	%v = Mutt version
+#
+set compose_format="-- %v-- Compose  [Approximate Message Size: %l   Attachments: %a]%>-"
+
+# %C current number	%d last modified	%f filename
+# %F permissions	%g group		%l number of hard links
+# %N "N" if new mail	%s size in bytes	%t "*" if tagged
+# %u owner name		%>X right justify the rest and pad with "X"
+# %|X pad to the end of the line with character "X"
+set folder_format="%3C %t%N %F %-8.8u %-8.8g %8s %d %f" # file browser menu
+set hdr_format="%4C %Z %{%m/%d} %-40F (%4c) %s" # format of the index
+
+# Allows escape sequences: 
+#     (\n = newline, \r = carriage-return, \t = tab, \f = formfeed)
+# 
+# %a Author address	%b original mbox	%B destination list or mbox
+# %c bytes in message	%C Message number
+# %d date and time in senders timezone ($date_format)
+# %D date and time in local timezone ($date_format)
+# %e curr. msg no in thread	%E number of msgs in curr. thread
+# %f address+real name	%F address+realname (unless self)
+# %i Message-ID		%l number of lines	%L list-from function
+# %m # of msg in mbox	%M number of hidden messages in collapsed thread
+# %n author real name	%N score		%s subject of msg     
+# %S status of message (N/D/d/!/*/r)		
+# %t `to:' field	%T char from tochars	%u login name of author
+# %v author's firstname	%y X-Label		%Y X-Label, if changed
+# %Z message status flags
+# %>X	  right justify the rest of the string and pad with character "X"
+# %|X	  pad to the end of the line with character "X"
+# %{<s>} sent time+date in senders timezone  (<s> is an strftime(3) expression)
+# %[<s>] sent time+date in local timezone    (<s> is an strftime(3) expression)
+# %(<s>) receive time+date in local timezone (<s> is an strftime(3) expression)
+# %<<s>> current time in local timezone      (<s> is an strftime(3) expression)
+#	 if first char in <s> is "!", do not use locale.
+set index_format="%4C %Z %[!%Y/%m/%d] %-20.20F (%?M?C%3M&%4l?) %s"
+set forward_format="(fwd) %s"	# subject of forwarded mails
+
+set message_format="%-.16n: %s"	# string for message/rfc822 in attachment list
+set pager_format="-%Z- %C/%m [%[%H:%M]] %-17.17n   %s" # status line of the pager
+
+source "$HOME/.mutt/color/color256"
+source "$HOME/.mutt/header"
+source "$HOME/.mutt/hook"
+source "$HOME/.mutt/key_binding"
+source "$HOME/.mutt/auto_view"
+# source "$HOME/.mutt/mailbox"
+# source "$HOME/.mutt/gpg"
+# source "$HOME/.mutt/subscription"

@@ -13,6 +13,7 @@
 	$ mkdir -p ~/.vim/session
 	$ git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	$ ln -s ~/.rcfiles/vimrc ~/.vimrc 
+    $ ln -s ~/.rcfiles/vimcolors ~/.vim/colors
 	
 ##### Then, in Vim
 	

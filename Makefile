@@ -7,6 +7,9 @@
 .muttrc:
 	ln -s ${HOME}/.rcfiles/muttrc ${HOME}/.muttrc 
 
+.screenrc:
+	ln -s ${HOME}/.rcfiles/screenrc ${HOME}/.screenrc 
+
 .gitconfig:
 	ln -s ${HOME}/.rcfiles/gitconfig ${HOME}/.gitconfig
 
@@ -26,5 +29,6 @@ clean:
 	rm -rf ${HOME}/.cshrc
 	rm -rf ${HOME}/.bashrc
 	rm -rf ${HOME}/.muttrc
+	rm -rf ${HOME}/.screenrc
 	rm -rf ${HOME}/.vim
 	rm -rf ${HOME}/.vimrc

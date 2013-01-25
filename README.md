@@ -27,3 +27,6 @@
 
 #### Muttrc
     $ ln -s ${HOME}/.rcfiles/muttrc ${HOME}/.muttrc
+
+#### Screenrc
+    $ ln -s ${HOME}/.rcfiles/screenrc ${HOME}/.screenrc

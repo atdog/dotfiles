@@ -8,10 +8,10 @@ export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21
 export tor="140.113.208.227:65000"
 
-# for autojump
-[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 # for Mac OSX
 if [ `uname` = "Darwin" ]; then
+    # for autojump
+    [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
     # for android sdk
     export PATH=/usr/local/Cellar/android-sdk/r21/tools:$PATH
     export PATH=/usr/local/Cellar/android-sdk/r21/platform-tools:$PATH

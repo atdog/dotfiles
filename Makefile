@@ -17,3 +17,10 @@
 	ln -s ${HOME}/.rcfiles/vimrc ${HOME}/.vimrc
 	ln -s ${HOME}/.rcfiles/vimcolors ${HOME}/.vim/colors
 	vim '+BundleInstall'
+
+clean:
+	rm -rf ${HOME}/.cshrc
+	rm -rf ${HOME}/.bashrc
+	rm -rf ${HOME}/.muttrc
+	rm -rf ${HOME}/.vim
+	rm -rf ${HOME}/.vimrc

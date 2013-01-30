@@ -15,6 +15,7 @@ Bundle "vim-scripts/simplecommenter.git"
 Bundle "vim-scripts/taglist.vim.git"
 Bundle "jeroenbourgois/vim-actionscript.git"
 Bundle "Lokaltog/vim-powerline.git"
+Bundle "sontek/rope-vim"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -290,6 +291,14 @@ if has("gui_running")
         "map <D-D> :ProjectDelete
     endif
 endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rope vim(Python AutoComplPop)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let ropevim_vim_completion = 1
+let ropevim_extended_complete = 1
+imap <LEADER>a <C-R>=RopeCodeAssistInsertMode()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

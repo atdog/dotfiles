@@ -323,6 +323,8 @@ if s:uname == "Darwin\n"
     imap <LEADER>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
     nmap <LEADER>y :.w !pbcopy<CR><CR>
     vmap <LEADER>y :w !pbcopy<CR><CR>
+else
+    nmap <LEADER>p :set paste!<CR>
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

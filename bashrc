@@ -159,3 +159,5 @@ function pmt {
 # prompt setting
 export _prompt_setting=0
 export PROMPT_COMMAND="_arrow_prompt"
+# autocomplete ssh commands
+complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh

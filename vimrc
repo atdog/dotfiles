@@ -314,8 +314,16 @@ nmap <C-K> ddkP
 nmap <C-J> ddp
 nmap <LEADER>j o<ESC>
 nmap <LEADER>k O<ESC>
-nmap <LEADER>p :set paste!<CR> 
 
+
+let s:uname = system("uname")
+if s:uname == "Darwin\n"
+    " Do Mac stuff here
+    nmap <LEADER>p :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+    imap <LEADER>p <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+    nmap <LEADER>y :.w !pbcopy<CR><CR>
+    vmap <LEADER>y :w !pbcopy<CR><CR>
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line number map

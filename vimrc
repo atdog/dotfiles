@@ -16,6 +16,7 @@ Bundle "vim-scripts/taglist.vim.git"
 Bundle "jeroenbourgois/vim-actionscript.git"
 Bundle "Lokaltog/vim-powerline.git"
 Bundle "sontek/rope-vim"
+Bundle "nathanaelkane/vim-indent-guides"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -375,3 +376,6 @@ set laststatus=2
 " The Vim documentation suggests adding set secure as the last line in your
 " vimrc.
 set secure
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234

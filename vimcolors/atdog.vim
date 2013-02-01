@@ -99,7 +99,7 @@ if has("gui_running")
         hi MatchParen   gui=NONE      guifg=#404040   guibg=#8fff8b
     endif
 else
-    " hi Normal           cterm=NONE      ctermfg=231     ctermbg=232
+    hi Normal           cterm=NONE      ctermfg=231     ctermbg=232
 
     hi IncSearch        cterm=BOLD      ctermfg=232     ctermbg=215
     hi Search           cterm=NONE      ctermfg=232     ctermbg=215

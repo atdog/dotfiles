@@ -7,6 +7,7 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21
 export tor="140.113.208.227:65000"
+export LANG="zh_TW.UTF-8"
 
 # for Mac OSX
 if [ `uname` = "Darwin" ]; then

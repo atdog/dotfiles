@@ -121,7 +121,7 @@ function _arrow_prompt {
     if [ `uname` == "Darwin" ]; then
         export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
     else 
-        export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\w] \[\e[1;35m\]➟  \[\e[m\]"
+        export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
     fi
 }
 

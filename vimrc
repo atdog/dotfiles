@@ -17,6 +17,7 @@ Bundle "jeroenbourgois/vim-actionscript.git"
 Bundle "Lokaltog/vim-powerline.git"
 Bundle "sontek/rope-vim"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle "vim-scripts/AnsiEsc.vim"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

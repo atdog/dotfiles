@@ -32,3 +32,5 @@ clean:
 	rm -rf ${HOME}/.screenrc
 	rm -rf ${HOME}/.vim
 	rm -rf ${HOME}/.vimrc
+
+basic: clean .bashrc .gitconfig .vimrc

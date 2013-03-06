@@ -99,7 +99,8 @@ set undodir=~/.vim/undo/
 set undofile
 
 " Set backspace                                                                                                                         
-set backspace=start,indent,eol
+" set backspace=start,indent,eol
+set backspace=start,indent
 
 " Backspace and cursor keys wrap to
 set whichwrap+=<,>,h,l

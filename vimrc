@@ -18,6 +18,8 @@ Bundle "Lokaltog/vim-powerline.git"
 Bundle "sontek/rope-vim"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "vim-scripts/AnsiEsc.vim"
+Bundle "vim-scripts/AnsiEsc.vim"
+Bundle "jistr/vim-nerdtree-tabs"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -363,8 +365,8 @@ endfunction
 " encoding change hotkey
 noremap <LEADER>b :e ++enc=big5<CR>:set tenc=big5<CR>:set fenc=big5<CR>
 
-" NERD tree
-noremap <LEADER>n :NERDTreeToggle<CR>
+" NERD tree tab
+noremap <LEADER>n :NERDTreeTabsToggle<CR>
 
 "gundo
 let g:gundo_right=1

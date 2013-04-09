@@ -154,6 +154,8 @@ else
     hi TaglistTagName   cterm=BOLD      ctermfg=63      ctermbg=NONE
     " add by dm4
     hi CursorLine       term=none cterm=none ctermbg=234
+    " add by atdog
+    hi Directory        guifg=#000033   ctermfg=blue
 
     if v:version >= 700
         hi Pmenu        cterm=NONE      ctermfg=253     ctermbg=242

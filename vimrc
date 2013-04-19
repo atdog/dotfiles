@@ -325,6 +325,7 @@ nmap <C-K> ddkP
 nmap <C-J> ddp
 nmap <LEADER>j o<ESC>
 nmap <LEADER>k O<ESC>
+nnoremap bf :bf<CR>
 
 
 let s:uname = system("uname")

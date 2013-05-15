@@ -3,9 +3,6 @@ export PATH=/Users/atdog/.rvm/gems/ruby-1.9.3-p374/bin:/usr/local/share/npm/bin:
 export PATH=.:$PATH
 export PYTHONPATH=/Library/Python/2.7/site-packages
 export ARCHFLAGS="-arch x86_64"
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
-export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21
 export tor="140.113.208.227:65000"
 export LANG="zh_TW.UTF-8"
 
@@ -20,6 +17,9 @@ if [ `uname` = "Darwin" ]; then
     #
     export PATH=~/bin:$PATH
     export EDITOR=vim
+    export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+    export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
+    export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21
     # mysql
     #alias mysql=/usr/local/mysql/bin/mysql
     #alias mysqladmin=/usr/local/mysql/bin/mysqladmin

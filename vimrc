@@ -60,7 +60,7 @@ set noswapfile
 
 " Vim will change the current working directory whenever you                                                                                                       
 "         open a file, switch buffers, delete a buffer or open/close a window
-set autochdir
+" set autochdir
 
 " Set line number
 set nu
@@ -182,6 +182,12 @@ set completeopt=menu,menuone,longest,preview
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set previewheight=2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set filetype depend on the filename extension
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.ros set ft=php
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -319,6 +325,7 @@ nmap <C-K> ddkP
 nmap <C-J> ddp
 nmap <LEADER>j o<ESC>
 nmap <LEADER>k O<ESC>
+nnoremap bf :bf<CR>
 
 
 let s:uname = system("uname")

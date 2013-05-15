@@ -1,4 +1,5 @@
 export SVN_EDITOR=vim
+export EDITOR=vim
 export PATH=/Users/atdog/.rvm/gems/ruby-1.9.3-p374/bin:/usr/local/share/npm/bin:/usr/local/bin:${PATH}:/Users/atdog/bin:/Users/atdog/eclipse-android/eclipse-indigo:/usr/local/sbin
 export PATH=.:$PATH
 export PYTHONPATH=/Library/Python/2.7/site-packages

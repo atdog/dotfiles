@@ -27,7 +27,6 @@ if [ `uname` = "Darwin" ]; then
     #
     alias gitx="open . -a gitx"
     alias wireshark="open ~/.wireshark -a wireshark"
-    alias d="door"
     alias cls="clear"
     # perl brew
     #. ~/perl5/perlbrew/etc/bashrc

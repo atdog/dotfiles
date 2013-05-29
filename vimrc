@@ -137,8 +137,8 @@ endfunction
 function! SAVE_SESSION()
     " save session to sessdir
     silent execute "mksession! " . GET_SESSION_FILE()
-endfunction
     silent execute '!echo colorscheme atdog >> ' . GET_SESSION_FILE()
+endfunction
 
 function! LOAD_SESSION()
     let _path_ = GET_SESSION_FILE()

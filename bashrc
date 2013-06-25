@@ -19,8 +19,8 @@ if [ `uname` = "Darwin" ]; then
     export PATH=~/bin:$PATH
     export EDITOR=vim
     export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
-    export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
-    export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21
+    export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21.1
+    export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21.1
     # mysql
     #alias mysql=/usr/local/mysql/bin/mysql
     #alias mysqladmin=/usr/local/mysql/bin/mysqladmin
@@ -109,56 +109,18 @@ fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-
+# sudo autocomplete
 if [ "$PS1" ]; then
     complete -cf sudo
 fi
 
 # dm4 prompt 
 # [~] ➟
-function _arrow_prompt {
-    if [ `uname` == "Darwin" ]; then
-        export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
-    else 
-        export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
-    fi
-}
-
-# ★  15:36 [~] ---------
-# $
-function _seperated_prompt {
-    newPWD=`echo -n $PWD | perl -p -e "s{$HOME}{~}"`
-    local temp="11:11 [${newPWD}] $(git_branch) "
-    local fillsize=$((${COLUMNS}-${#temp}))
-    fill=`perl -e "print '-'x$fillsize if $fillsize > 0;"`
-    # ★ ❤
-    export PS1="\n\[\e[1;33m\]\A \[\e[1;33m\][\${newPWD}] \[\e[0;35m\]\$(git_branch)\[\e[0;37m\]\${fill}\n\[\e[0m\]$ "
-}
-
-# for powerline-bash
-function _powerline_prompt {
-    export PS1="$(~/.rcfiles/powerline-shell.py $?)"
-}
-
-# switch prompt
-function pmt {
-    export _prompt_setting=`perl -e "print (($_prompt_setting+1)%3)"`
-    if [ $_prompt_setting = 0 ]; then
-        export PROMPT_COMMAND="_arrow_prompt"
-    elif [ $_prompt_setting = 1 ]; then
-        if [ ! -f ~/.rcfiles/powerline-shell.py ]; then
-            curl -s -o ~/.rcfiles/powerline-shell.py https://raw.github.com/milkbikis/powerline-shell/master/powerline-shell.py
-            chmod +x ~/.rcfiles/powerline-shell.py
-        fi
-        export PROMPT_COMMAND="_powerline_prompt"
-    elif [ $_prompt_setting = 2 ]; then
-        export PROMPT_COMMAND="_seperated_prompt"
-    fi
-}
-
-# prompt setting
-export _prompt_setting=0
-export PROMPT_COMMAND="_arrow_prompt"
+if [ `uname` == "Darwin" ]; then
+    export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
+else 
+    export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
+fi
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^(p|g)?ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
 complete -W "$(echo `cat ~/.bash_history | egrep '^(p|g)?ssh ' | sort | uniq | sed 's/^ssh //'`;)" gssh

@@ -10,3 +10,5 @@
     br = branch
 [color]
     ui = true
+;  [http]
+;      proxy = http://localhost:8081

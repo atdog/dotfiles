@@ -6,6 +6,7 @@ export PYTHONPATH=/Library/Python/2.7/site-packages
 export ARCHFLAGS="-arch x86_64"
 export tor="140.113.208.227:65000"
 export LANG="zh_TW.UTF-8"
+export HOMEBREW_GITHUB_API_TOKEN=580935a06ff3cf61185eac63dc2c0486c57daaa4
 
 # for Mac OSX
 if [ `uname` = "Darwin" ]; then

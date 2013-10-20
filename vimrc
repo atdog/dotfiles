@@ -18,7 +18,6 @@ Bundle "Lokaltog/vim-powerline.git"
 Bundle "sontek/rope-vim"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "vim-scripts/AnsiEsc.vim"
-Bundle "vim-scripts/AnsiEsc.vim"
 Bundle "jistr/vim-nerdtree-tabs"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

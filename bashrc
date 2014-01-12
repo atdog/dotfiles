@@ -118,9 +118,9 @@ fi
 # dm4 prompt 
 # [~] ➟
 if [ `uname` == "Darwin" ]; then
-    export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
+    export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;35m\]➟  \[\e[m\]"
 else
-    export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]] \[\e[1;35m\]➟  \[\e[m\]"
+    export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;35m\]➟  \[\e[m\]"
 fi
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^(p|g)?ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh

@@ -68,6 +68,7 @@ alias la="ls -a"
 alias ls="ls -GF"
 alias cp="cp -i"
 alias cls="clear"
+alias rscp='rsync -v -P -e ssh'
 alias ip="echo \`curl -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 alias tip="echo \`curl --socks4 $tor -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 

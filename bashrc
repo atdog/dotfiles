@@ -28,7 +28,7 @@ if [ `uname` = "Darwin" ]; then
     #
     alias gitx="open . -a gitx"
     alias wireshark="open ~/.wireshark -a wireshark"
-    alias cls="clear"
+    alias cls="printf \"\033c\""
     # perl brew
     #. ~/perl5/perlbrew/etc/bashrc
     # bash_completion
@@ -67,7 +67,7 @@ alias ll="ls -lFah"
 alias la="ls -a"
 alias ls="ls -GF"
 alias cp="cp -i"
-alias cls="clear"
+alias cls="printf \"\033c\""
 alias ip="echo \`curl -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 alias tip="echo \`curl --socks4 $tor -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 

@@ -15,10 +15,10 @@ Bundle "vim-scripts/simplecommenter.git"
 Bundle "vim-scripts/taglist.vim.git"
 Bundle "jeroenbourgois/vim-actionscript.git"
 Bundle "Lokaltog/vim-powerline.git"
-Bundle "sontek/rope-vim"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "vim-scripts/AnsiEsc.vim"
 Bundle "jistr/vim-nerdtree-tabs"
+Bundle 'thinca/vim-quickrun'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

@@ -3,6 +3,7 @@
     email = atdog.cs96@gmail.com
 [core]
     editor = /usr/local/bin/vim
+	pager = less -+F
 [alias]
     co = checkout
     ci = commit

@@ -28,7 +28,7 @@ if [ `uname` = "Darwin" ]; then
     #
     alias gitx="open . -a gitx"
     alias wireshark="open ~/.wireshark -a wireshark"
-    alias cls="clear"
+    alias cls="printf \"\033c\""
     # perl brew
     #. ~/perl5/perlbrew/etc/bashrc
     # bash_completion
@@ -67,7 +67,7 @@ alias ll="ls -lFah"
 alias la="ls -a"
 alias ls="ls -GF"
 alias cp="cp -i"
-alias cls="clear"
+alias cls="printf \"\033c\""
 alias rscp='rsync -v -P -e ssh'
 alias ip="echo \`curl -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 alias tip="echo \`curl --socks4 $tor -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
@@ -108,6 +108,9 @@ if [ -e ~/perl5/perlbrew/etc/bashrc ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
 # [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+[[ -e $HOME/.pyenv/ ]] && export PYENV_ROOT="$HOME/.pyenv"
+[[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+[[ -e $HOME/.pyenv/ ]] && eval "$(pyenv init -)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

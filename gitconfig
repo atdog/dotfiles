@@ -13,3 +13,5 @@
     ui = true
 ;  [http]
 ;      proxy = http://localhost:8081
+[push]
+	default = simple

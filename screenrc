@@ -16,11 +16,11 @@ defflow on
 escape ^Oo
 
 autodetach on
-
-vbell on
+vbellwait 3
+vbell off
 vbell_msg "DING DING!!"
 defmonitor on
-activity "<window: %n>"
+activity "Ding Ding!! [%n] %t"
 
 #remove some stupid / dangerous key bindings
 bind ^k
@@ -42,7 +42,7 @@ bindkey \033[C next
 #bindkey "[1;2C" next
 
 # 訊息的文字及背景顏色 r: 紅色 w: 白色 g: 綠色 b: 藍色 y: 黃色
-sorendition wb
+sorendition wr
 
 # 預設使用的 shell
 shell bash
@@ -198,7 +198,7 @@ shelltitle "---"
 #///hardstatus alwayslastline "%{..M} %e %{..G} %=%H %{..Y} %c %{..R} %d/%m/%Y %{.K} Load: %l %{wb}"
 #caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w"
 #hardstatus alwayslastline "%{R}[ %{w}%1` %{R}]%=%{M}%e %{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
-caption always "%{.KW} %-w%{rk}|%{y}%n %t%{rk}|%{.KW}%+w%< %= %{kw}"
+caption always "%{.b}%{y} %-w%{rk}|%{y}%n %t%{rk}|%{.b}%{y}%+w%< %= %{kw}"
 hardstatus alwayslastline "%{M}%e %=%{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
 #backtick 1 60 60 screen_agenda 
 #hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
@@ -207,8 +207,9 @@ hardstatus alwayslastline "%{M}%e %=%{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %
 #startup_message off
 #bind b encoding big5 utf8
 #bind u encoding utf8 utf8 # convert utf8 to big5
-#screen -t IRC 0 irssi
-#screen -t news 1 
+screen -t irc 0 weechat
+screen -t ptt 1 ssh bbs@ptt.cc
+screen -t --- 2
 #screen -t mail 2
 #screen -t BS2 3 telnet bs2.to
 #screen -t ptt 4 telnet ptt.cc

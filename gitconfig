@@ -2,7 +2,8 @@
     name = Hung-Chi Su
     email = atdog.cs96@gmail.com
 [core]
-    editor = /usr/bin/vim
+    editor = vim
+	pager = less -+F
 [alias]
     co = checkout
     ci = commit

@@ -7,6 +7,7 @@ export ARCHFLAGS="-arch x86_64"
 export tor="140.113.208.227:65000"
 export LANG="zh_TW.UTF-8"
 export HOMEBREW_GITHUB_API_TOKEN=580935a06ff3cf61185eac63dc2c0486c57daaa4
+export PAGER="`which less` -s"
 
 # for Mac OSX
 if [ `uname` = "Darwin" ]; then
@@ -71,6 +72,7 @@ alias cls="printf \"\033c\""
 alias rscp='rsync -v -P -e ssh'
 alias ip="echo \`curl -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 alias tip="echo \`curl --socks4 $tor -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
+alias torcurl="curl --socks4 127.0.0.1:65000"
 
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
@@ -122,9 +124,9 @@ fi
 # dm4 prompt 
 # [~] ➟
 if [ `uname` == "Darwin" ]; then
-    export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;35m\]➟  \[\e[m\]"
+    export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;34m\]➟  \[\e[m\]"
 else
-    export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;35m\]➟  \[\e[m\]"
+    export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;34m\]➟  \[\e[m\]"
 fi
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^(p|g)?ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh

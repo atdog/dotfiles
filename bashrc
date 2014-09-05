@@ -58,6 +58,7 @@ csie () {
 }
 
 
+alias ..="cd .."
 alias sr="screen -rdaA"
 alias pssh="ssh -o 'ProxyCommand /usr/bin/nc -x $tor %h %p'"
 alias sc="screen"

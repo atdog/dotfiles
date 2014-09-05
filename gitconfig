@@ -2,7 +2,7 @@
     name = Hung-Chi Su
     email = atdog.cs96@gmail.com
 [core]
-    editor = /usr/local/bin/vim
+    editor = vim
 	pager = less -+F
 [alias]
     co = checkout
@@ -11,7 +11,5 @@
     br = branch
 [color]
     ui = true
-;  [http]
-;      proxy = http://localhost:8081
 [push]
 	default = simple

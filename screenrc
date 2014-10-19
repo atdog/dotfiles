@@ -199,7 +199,7 @@ shelltitle "---"
 #caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w"
 #hardstatus alwayslastline "%{R}[ %{w}%1` %{R}]%=%{M}%e %{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
 caption always "%{.b}%{y} %-w%{rk}|%{y}%n %t%{rk}|%{.b}%{y}%+w%< %= %{kw}"
-hardstatus alwayslastline "%{M}%e %=%{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
+hardstatus alwayslastline "%{M} %=%{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
 #backtick 1 60 60 screen_agenda 
 #hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
 #bindkey \033[D prev
@@ -207,9 +207,9 @@ hardstatus alwayslastline "%{M}%e %=%{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %
 #startup_message off
 #bind b encoding big5 utf8
 #bind u encoding utf8 utf8 # convert utf8 to big5
-screen -t irc 0 weechat
-screen -t ptt 1 ssh bbs@ptt.cc
-screen -t --- 2
+#  screen -t irc 0 weechat
+#  screen -t ptt 1 ssh bbs@ptt.cc
+#  screen -t --- 2
 #screen -t mail 2
 #screen -t BS2 3 telnet bs2.to
 #screen -t ptt 4 telnet ptt.cc

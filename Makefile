@@ -10,6 +10,9 @@
 .screenrc:
 	ln -s ${HOME}/.rcfiles/screenrc ${HOME}/.screenrc 
 
+.tmux.conf:
+	ln -s ${HOME}/.rcfiles/tmux.conf ${HOME}/.tmux.conf
+
 .gitconfig:
 	ln -s ${HOME}/.rcfiles/gitconfig ${HOME}/.gitconfig
 

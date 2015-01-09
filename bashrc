@@ -14,22 +14,24 @@ if [ `uname` = "Darwin" ]; then
     # for autojump
     [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
     # for android sdk
-    export PATH=/usr/local/Cellar/android-sdk/r21/tools:$PATH
-    export PATH=/usr/local/Cellar/android-sdk/r21/platform-tools:$PATH
+#     export PATH=/usr/local/Cellar/android-sdk/23.0.2/tools:$PATH
+#     export PATH=/usr/local/Cellar/android-sdk/r21/platform-tools:$PATH
+    export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
     #export PATH=~/android-ndk:$PATH
     #
     export PATH=~/bin:$PATH
     export EDITOR=vim
 #     export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
     export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-    export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/23.0.2
-    export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
+#     export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/23.0.2
+#     export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
     # mysql
     #alias mysql=/usr/local/mysql/bin/mysql
     #alias mysqladmin=/usr/local/mysql/bin/mysqladmin
     #
-    alias gitx="open . -a gitx"
-    alias wireshark="open ~/.wireshark -a wireshark"
+#     alias gitx="open . -a gitx"
+#     alias wireshark="open ~/.wireshark -a wireshark"
     alias cls="printf \"\033c\""
     # perl brew
     #. ~/perl5/perlbrew/etc/bashrc

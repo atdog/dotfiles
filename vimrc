@@ -109,45 +109,45 @@ set whichwrap+=<,>,h,l
 " Set magic on
 set magic
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Session feature
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:session_dir="~/.vim/session"
-set sessionoptions-=buffers 
-
-function! GET_SESSION_DIR()
-    if exists("g:session_dir")
-    " set session dir
-        let _sessdir_ = expand(g:session_dir)
-    else
-        let _sessdir_ = expand('$HOME/.vim/session')
-    endif
-    " mkdir if need
-    if !isdirectory(_sessdir_)
-        call mkdir(_sessdir_)
-    endif
-    return _sessdir_
-endfunction
-
-function! GET_SESSION_FILE() 
-    return GET_SESSION_DIR() . "/" . system("pwd | md5 | perl -pe 'chomp'") . ".vim"
-endfunction
-
-function! SAVE_SESSION()
-    " save session to sessdir
-    silent execute "mksession! " . GET_SESSION_FILE()
-    silent execute '!echo colorscheme atdog >> ' . GET_SESSION_FILE()
-endfunction
-
-function! LOAD_SESSION()
-    let _path_ = GET_SESSION_FILE()
-    if filereadable(_path_)
-        execute "source " . _path_
-    endif
-endfunction
-
-autocmd BufWrite * call SAVE_SESSION()
-autocmd VimEnter * if argc() == 0 | call LOAD_SESSION() | endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Session feature
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" let g:session_dir="~/.vim/session"
+"set sessionoptions-=buffers 
+"
+"function! GET_SESSION_DIR()
+"    if exists("g:session_dir")
+"    " set session dir
+"        let _sessdir_ = expand(g:session_dir)
+"    else
+"        let _sessdir_ = expand('$HOME/.vim/session')
+"    endif
+"    " mkdir if need
+"    if !isdirectory(_sessdir_)
+"        call mkdir(_sessdir_)
+"    endif
+"    return _sessdir_
+"endfunction
+"
+"function! GET_SESSION_FILE() 
+"    return GET_SESSION_DIR() . "/" . system("pwd | md5 | perl -pe 'chomp'") . ".vim"
+"endfunction
+"
+"function! SAVE_SESSION()
+"    " save session to sessdir
+"    silent execute "mksession! " . GET_SESSION_FILE()
+"    silent execute '!echo colorscheme atdog >> ' . GET_SESSION_FILE()
+"endfunction
+"
+"function! LOAD_SESSION()
+"    let _path_ = GET_SESSION_FILE()
+"    if filereadable(_path_)
+"        execute "source " . _path_
+"    endif
+"endfunction
+"
+"autocmd BufWrite * call SAVE_SESSION()
+"autocmd VimEnter * if argc() == 0 | call LOAD_SESSION() | endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

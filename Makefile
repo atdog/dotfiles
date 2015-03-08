@@ -35,5 +35,6 @@ clean:
 	rm -rf ${HOME}/.screenrc
 	rm -rf ${HOME}/.vim
 	rm -rf ${HOME}/.vimrc
+	rm -rf ${HOME}/.tmux.conf
 
 basic: clean .bashrc .gitconfig .vimrc

@@ -1,6 +1,6 @@
 # for ls color
 export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+export LSCOLORS=gacadahafahahababaacad
 export SVN_EDITOR=vim
 export EDITOR=vim
 export PATH=/Users/atdog/.rvm/gems/ruby-2.1.1/bin:/usr/local/share/npm/bin:/usr/local/bin:${PATH}:/Users/atdog/bin:/Users/atdog/eclipse-android/eclipse-indigo:/usr/local/sbin:/Users/atdog/.pyenv/versions/2.6.6/bin

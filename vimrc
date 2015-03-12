@@ -14,11 +14,11 @@ Bundle "scrooloose/nerdtree.git"
 Bundle "vim-scripts/simplecommenter.git"
 Bundle "vim-scripts/taglist.vim.git"
 Bundle "jeroenbourgois/vim-actionscript.git"
-Bundle "Lokaltog/vim-powerline.git"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "vim-scripts/AnsiEsc.vim"
 Bundle "jistr/vim-nerdtree-tabs"
 Bundle 'thinca/vim-quickrun'
+Bundle 'bling/vim-airline'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -370,7 +370,8 @@ let g:gundo_right=1
 nnoremap <LEADER>r :GundoToggle<CR>
 
 " power line
-let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#tabline#enabled = 1
+
 " set status line
 set laststatus=2
 

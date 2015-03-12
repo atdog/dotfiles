@@ -1,3 +1,6 @@
+# for ls color
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 export SVN_EDITOR=vim
 export EDITOR=vim
 export PATH=/Users/atdog/.rvm/gems/ruby-2.1.1/bin:/usr/local/share/npm/bin:/usr/local/bin:${PATH}:/Users/atdog/bin:/Users/atdog/eclipse-android/eclipse-indigo:/usr/local/sbin:/Users/atdog/.pyenv/versions/2.6.6/bin
@@ -23,7 +26,7 @@ if [ `uname` = "Darwin" ]; then
     export PATH=~/bin:$PATH
     export EDITOR=vim
 #     export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
-    export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 #     export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/23.0.2
 #     export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
     # mysql
@@ -129,7 +132,7 @@ fi
 # dm4 prompt 
 # [~] ➟
 if [ `uname` == "Darwin" ]; then
-    export PS1="\[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;34m\]➟  \[\e[m\]"
+    export PS1="\[\e[38;5;171m\]\$(git_branch)\[\e[1;37m\][\[\e[38;5;137m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[38;5;75m\]➟  \[\e[m\]"
 else
     export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;34m\]➟  \[\e[m\]"
 fi

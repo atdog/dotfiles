@@ -132,7 +132,7 @@ fi
 # dm4 prompt 
 # [~] ➟
 if [ `uname` == "Darwin" ]; then
-    export PS1="\[\e[38;5;171m\]\$(git_branch)\[\e[1;37m\][\[\e[38;5;137m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[38;5;75m\]➟  \[\e[m\]"
+    export PS1="\[\e[38;5;171m\]\$(git_branch)\[\e[1;37m\][\[\e[38;5;137m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[38;5;69m\]➟  \[\e[m\]"
 else
     export PS1="\h \[\e[0;35m\]\$(git_branch)\[\e[1;37m\][\[\e[1;30m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[1;34m\]➟  \[\e[m\]"
 fi

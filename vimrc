@@ -369,7 +369,8 @@ noremap <LEADER>n :NERDTreeTabsToggle<CR>
 let g:gundo_right=1
 nnoremap <LEADER>r :GundoToggle<CR>
 
-" power line
+" air line
+let g:airline_theme='wombat' 
 let g:airline#extensions#tabline#enabled = 1
 
 " set status line

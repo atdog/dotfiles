@@ -72,9 +72,6 @@ alias sc="screen"
 alias grep="grep --color"
 alias rm="rm -i"
 alias mv="mv -i"
-alias ll="ls -lFah"
-alias la="ls -a"
-alias ls="ls -GF"
 alias cp="cp -i"
 alias cls="printf \"\033c\""
 alias rscp='rsync -v -P -e ssh'
@@ -133,8 +130,14 @@ fi
 # [~] ➟
 if [ `uname` == "Darwin" ]; then
     export PS1="\[\e[38;5;171m\]\$(git_branch)\[\e[1;37m\][\[\e[38;5;137m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[38;5;69m\]➟  \[\e[m\]"
+    alias ll="ls -lFah"
+    alias la="ls -a"
+    alias ls="ls -GF"
 else
     export PS1="\h \[\e[38;5;171m\]\$(git_branch)\[\e[1;37m\][\[\e[38;5;137m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[38;5;69m\]➟  \[\e[m\]"
+    alias ll="ls --color -lFah"
+    alias la="ls --color -a"
+    alias ls="ls --color -GF"
 fi
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^(p|g)?ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh

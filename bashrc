@@ -4,7 +4,7 @@ export LSCOLORS=gacadahafahahababaacad
 export LS_COLORS='di=36;40:ln=32;40:so=33;40:pi=37;40:ex=35;40:bd=37;40:cd=37;40:su=31;40:sg=31;40:tw=0;42:ow=0;43:'
 export SVN_EDITOR=vim
 export EDITOR=vim
-export PATH=/Users/atdog/.rvm/gems/ruby-2.1.1/bin:/usr/local/share/npm/bin:/usr/local/bin:${PATH}:/Users/atdog/bin:/Users/atdog/eclipse-android/eclipse-indigo:/usr/local/sbin:/Users/atdog/.pyenv/versions/2.6.6/bin
+export PATH=/usr/local/bin:${PATH}:/Users/atdog/bin:/usr/local/sbin
 export PATH=.:$PATH
 export PYTHONPATH=/Library/Python/2.7/site-packages
 export ARCHFLAGS="-arch x86_64"

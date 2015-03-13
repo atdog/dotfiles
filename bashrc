@@ -18,27 +18,18 @@ if [ `uname` = "Darwin" ]; then
     # for autojump
     [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
     # for android sdk
-#     export PATH=/usr/local/Cellar/android-sdk/23.0.2/tools:$PATH
-#     export PATH=/usr/local/Cellar/android-sdk/r21/platform-tools:$PATH
+    export PATH=/Users/atdog/Android/sdk/tools:$PATH
+    export PATH=/Users/atdog/Android/sdk/platform-tools:$PATH
+    export PATH=/Users/atdog/Android/ndk:$PATH
+    # for gnu sed
     export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-    #export PATH=~/android-ndk:$PATH
     #
     export PATH=~/bin:$PATH
     export EDITOR=vim
-#     export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-#     export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/23.0.2
-#     export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
-    # mysql
-    #alias mysql=/usr/local/mysql/bin/mysql
-    #alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-    #
-#     alias gitx="open . -a gitx"
-#     alias wireshark="open ~/.wireshark -a wireshark"
+    export TOR="127.0.0.1:9050"
     alias cls="printf \"\033c\""
-    # perl brew
-    #. ~/perl5/perlbrew/etc/bashrc
     # bash_completion
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
@@ -56,19 +47,11 @@ if [ `uname` = "Darwin" ]; then
     }
 fi
 
-csie () {
-    if [ -n "$*" ]; then
-        ssh r99922158@linux${*}.csie.ntu.edu.tw
-    else
-        ssh r99922158@linux2.csie.ntu.edu.tw
-    fi
-}
-
 
 alias ..="cd .."
 alias -- -="cd -"
 alias sr="screen -rdaA"
-alias pssh="ssh -o 'ProxyCommand /usr/bin/nc -x $tor %h %p'"
+alias pssh="ssh -o 'ProxyCommand /usr/bin/nc -x $TOR %h %p'"
 alias sc="screen"
 alias grep="grep --color"
 alias rm="rm -i"
@@ -77,8 +60,7 @@ alias cp="cp -i"
 alias cls="printf \"\033c\""
 alias rscp='rsync -v -P -e ssh'
 alias ip="echo \`curl -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
-alias tip="echo \`curl --socks4 $tor -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
-alias torcurl="curl --socks4 127.0.0.1:65000"
+alias tip="echo \`curl --socks4 $TOR -s http://orange.tw | sed 's/<br>//' | tr  $'\r\n' ' ' \`"
 
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
@@ -86,12 +68,6 @@ function git_branch {
 }
 
 if [ $TERM == "xterm-color" -o $TERM == "xterm-256color" ]; then
-    # set this "dm4@dm4-macbook 20:42 [~]$ "
-    #           \u  \h          \A     \w\$
-    # \033k\033\\\\ if for screen title
-    #export PS1="\[\033k\033\\\\\e[38;5;244m\]\A [\w]\$(git_branch)\[\e[0m\]\$ "
-    #export PS1="\033k\033\\\\\e[38;5;59m\u@\h \A [\w] \e[0m\$ "
-    #export PS1="\[\033k\033\\\\\e[36m\]\A\[\e[33m\] [\w] \[\e[36m\]\$(git_branch)\[\e[0m\]\$ "
     # colorful man page
     export PAGER="`which less` -s"
     export BROWSER="$PAGER"
@@ -104,17 +80,6 @@ if [ $TERM == "xterm-color" -o $TERM == "xterm-256color" ]; then
     export LESS_TERMCAP_ue=$'\E[0m' # end underline
 fi
 
-# open screen
-#if [ $SHLVL == 1 ]; then
-#    if [ $TERM == "xterm-color" ]; then
-#        /usr/local/bin/screen -RD
-#    fi
-#fi
-
-if [ -e ~/perl5/perlbrew/etc/bashrc ]; then
-    source ~/perl5/perlbrew/etc/bashrc
-fi
-# [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 [[ -e $HOME/.pyenv/ ]] && export PYENV_ROOT="$HOME/.pyenv"
 [[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 [[ -e $HOME/.pyenv/ ]] && eval "$(pyenv init -)"
@@ -127,7 +92,7 @@ if [ "$PS1" ]; then
     complete -cf sudo
 fi
 
-# dm4 prompt 
+# dm4 prompt
 # [~] ➟
 if [ `uname` == "Darwin" ]; then
     export PS1="\[\e[38;5;171m\]\$(git_branch)\[\e[1;37m\][\[\e[38;5;137m\]\w\[\e[0m\]\[\e[1;37m\]] \[\e[38;5;69m\]➟  \[\e[m\]"

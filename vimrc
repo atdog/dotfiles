@@ -11,14 +11,12 @@ Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 Bundle "sjl/gundo.vim.git"
 Bundle "scrooloose/nerdtree.git"
-Bundle "vim-scripts/simplecommenter.git"
 Bundle "vim-scripts/taglist.vim.git"
-Bundle "jeroenbourgois/vim-actionscript.git"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "vim-scripts/AnsiEsc.vim"
 Bundle "jistr/vim-nerdtree-tabs"
-Bundle 'thinca/vim-quickrun'
 Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdcommenter'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -62,7 +60,7 @@ set nowritebackup
 set noswapfile
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vim will change the current working directory whenever you                                                                                                       
+" Vim will change the current working directory whenever you
 "         open a file, switch buffers, delete a buffer or open/close a window
 " set autochdir
 
@@ -76,7 +74,7 @@ colorscheme atdog
 " Set tab
 " Replace tab with space
 set expandtab
-" Set tab to 4 space 
+" Set tab to 4 space
 set tabstop=4
 " To change the number of space characters inserted for indentation
 set shiftwidth=4
@@ -104,7 +102,7 @@ set cindent
 set undodir=~/.vim/undo/
 set undofile
 
-" Set backspace                                                                                                                         
+" Set backspace
 " set backspace=start,indent,eol
 set backspace=start,indent
 
@@ -118,7 +116,7 @@ set magic
 "" Session feature
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" let g:session_dir="~/.vim/session"
-"set sessionoptions-=buffers 
+"set sessionoptions-=buffers
 "
 "function! GET_SESSION_DIR()
 "    if exists("g:session_dir")
@@ -134,7 +132,7 @@ set magic
 "    return _sessdir_
 "endfunction
 "
-"function! GET_SESSION_FILE() 
+"function! GET_SESSION_FILE()
 "    return GET_SESSION_DIR() . "/" . system("pwd | md5 | perl -pe 'chomp'") . ".vim"
 "endfunction
 "
@@ -338,7 +336,7 @@ endif
 " Line number map
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <LEADER>l :call ShowLineNumber()<CR>
-function! ShowLineNumber() 
+function! ShowLineNumber()
     if(&nu == 1)
         set nu!
         set foldcolumn=0
@@ -375,7 +373,7 @@ let g:gundo_right=1
 nnoremap <LEADER>r :GundoToggle<CR>
 
 " air line
-let g:airline_theme='wombat' 
+let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 
 " set status line

@@ -21,11 +21,6 @@ Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 
-" ycm
-let $PATH = "/usr/bin:/sbin:/bin:/sbin:/usr/local/bin"
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-
 " Set <LEADER>
 let mapleader = ","
 

@@ -16,6 +16,9 @@
 .gitconfig:
 	ln -s ${HOME}/.rcfiles/gitconfig ${HOME}/.gitconfig
 
+.gdbinit:
+	ln -s ${HOME}/.rcfiles/gdbinit ${HOME}/.gdbinit
+
 .vimrc:
 	mkdir -p ${HOME}/.vim/bundle
 	mkdir -p ${HOME}/.vim/temp
@@ -36,5 +39,6 @@ clean:
 	rm -rf ${HOME}/.vim
 	rm -rf ${HOME}/.vimrc
 	rm -rf ${HOME}/.tmux.conf
+	rm -rf ${HOME}/.gdbinit
 
-basic: clean .bashrc .gitconfig .vimrc
+basic: clean .bashrc .gitconfig .vimrc .tmux.conf .gdbinit

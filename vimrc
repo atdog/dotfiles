@@ -375,6 +375,7 @@ nnoremap <LEADER>r :GundoToggle<CR>
 " air line
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " set status line
 set laststatus=2

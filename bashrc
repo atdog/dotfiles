@@ -104,6 +104,7 @@ else
     alias ll="ls --color -lFah"
     alias la="ls --color -a"
     alias ls="ls --color -GF"
+    [[ -f /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
 fi
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^(p|g)?ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh

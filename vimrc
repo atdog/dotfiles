@@ -8,8 +8,7 @@ Bundle 'gmarik/vundle'
 " Plugin
 "   github:  xxx/abc
 "   vim-script:  abc
-Bundle 'Valloric/YouCompleteMe'
-Bundle "sjl/gundo.vim.git"
+Bundle "ervandew/supertab"
 Bundle "scrooloose/nerdtree.git"
 Bundle "vim-scripts/taglist.vim.git"
 Bundle "nathanaelkane/vim-indent-guides"

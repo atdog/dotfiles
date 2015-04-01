@@ -66,6 +66,7 @@ alias tip="echo \`curl --socks4 $TOR -s http://orange.tw | sed 's/<br>//' | tr  
 alias ll="ls --color=auto -lFah"
 alias la="ls --color=auto -a"
 alias ls="ls --color=auto -GF"
+alias sl="ls --color=auto -GF"
 
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;

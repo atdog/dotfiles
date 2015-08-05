@@ -16,6 +16,10 @@ Bundle "vim-scripts/AnsiEsc.vim"
 Bundle "jistr/vim-nerdtree-tabs"
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'sjl/gundo.vim'
+
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

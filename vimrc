@@ -2,28 +2,26 @@
 " vundle settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 " Plugin
 "   github:  xxx/abc
+Plugin 'ervandew/supertab'
 "   vim-script:  abc
-Bundle "ervandew/supertab"
-Bundle "scrooloose/nerdtree.git"
-Bundle "vim-scripts/taglist.vim.git"
-Bundle "nathanaelkane/vim-indent-guides"
-Bundle "vim-scripts/AnsiEsc.vim"
-Bundle "jistr/vim-nerdtree-tabs"
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'sjl/gundo.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'vim-scripts/taglist.vim.git'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'vim-scripts/AnsiEsc.vim'
+Plugin 'bling/vim-airline'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-endwise'
 
-
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+call vundle#end()
 filetype plugin indent on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set <LEADER>
 let mapleader = ","

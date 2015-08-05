@@ -25,10 +25,10 @@
 	mkdir -p ${HOME}/.vim/undo
 	mkdir -p ${HOME}/.vim/session
 	mkdir -p ${HOME}/.vim/backup
-	git clone git://github.com/gmarik/vundle.git ${HOME}/.vim/bundle/vundle
+	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 	ln -s ${HOME}/.rcfiles/vimrc ${HOME}/.vimrc
 	ln -s ${HOME}/.rcfiles/vimcolors ${HOME}/.vim/colors
-	vim '+BundleInstall'
+	vim '+PluginInstall'
 
 clean:
 	rm -rf ${HOME}/.gitconfig

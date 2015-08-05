@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 "   vim-script:  abc
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'vim-scripts/taglist.vim.git'
+"Plugin 'vim-scripts/taglist.vim.git'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/AnsiEsc.vim'
 Plugin 'bling/vim-airline'

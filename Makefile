@@ -28,7 +28,7 @@
 	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 	ln -s ${HOME}/.rcfiles/vimrc ${HOME}/.vimrc
 	ln -s ${HOME}/.rcfiles/vimcolors ${HOME}/.vim/colors
-	vim '+PluginInstall'
+	vim +PluginInstall +qall
 
 clean:
 	rm -rf ${HOME}/.gitconfig

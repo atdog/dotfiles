@@ -97,6 +97,7 @@ fi
 [[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/versions/2.7.9/bin:$PATH"
 [[ -e $HOME/.pyenv/ ]] && eval "$(pyenv init -)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 

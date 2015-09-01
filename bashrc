@@ -16,7 +16,7 @@ if [ `uname` = "Darwin" ]; then
     # for autojump
     [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
     # for android sdk
-    export PATH=/Users/atdog/Android/sdk/build-tools/21.1.2/:$PATH
+    export PATH=/Users/atdog/Android/sdk/build-tools/21.1.2:$PATH
     export PATH=/Users/atdog/Android/sdk/tools:$PATH
     export PATH=/Users/atdog/Android/sdk/platform-tools:$PATH
     export PATH=/Users/atdog/Android/ndk:$PATH
@@ -36,8 +36,12 @@ if [ `uname` = "Darwin" ]; then
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
-    if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-        . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+    if [ -f `which docker-machine` ]; then
+        function dm {
+            if [ -n "$*" ]; then
+                docker-machine $* default
+            fi
+        }
     fi
     # open in finder
     function o {
@@ -87,7 +91,7 @@ if [ $TERM == "xterm-color" -o $TERM == "xterm-256color" ]; then
 fi
 
 [[ -e $HOME/.pyenv/ ]] && export PYENV_ROOT="$HOME/.pyenv"
-[[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+[[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/versions/2.7.9/bin:$PATH"
 [[ -e $HOME/.pyenv/ ]] && eval "$(pyenv init -)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 

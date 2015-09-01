@@ -9,6 +9,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export HOMEBREW_GITHUB_API_TOKEN=580935a06ff3cf61185eac63dc2c0486c57daaa4
 export PAGER="`which less` -s"
+export TERM="xterm-256color"
 
 
 # for Mac OSX
@@ -42,6 +43,8 @@ if [ `uname` = "Darwin" ]; then
                 docker-machine $* default
             fi
         }
+        alias dminit='eval "$(dm env)"'
+        alias ssh_docker='ssh -p 2222 $(dm ip) -l root'
     fi
     # open in finder
     function o {

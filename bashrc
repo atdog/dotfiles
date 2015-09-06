@@ -59,6 +59,11 @@ if [ `uname` = "Darwin" ]; then
                 sleep 1
             done
             ssh -p 2222 $(dm ip) -l root
+
+            read -p "[1;32mWant to stop containers && shutdown the VM?[0m (y/N): " response
+            if [[ $response == "y" || $response == "Y" ]]; then
+                dockdown
+            fi
         }
 
         function dockdown {

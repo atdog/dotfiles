@@ -62,19 +62,19 @@ if [ `uname` = "Darwin" ]; then
         }
 
         function dockdown {
-            echo "Stop all exited container..."
-            docker ps -a | tail -n -1 | grep Up | cut -d ' ' -f 1 | xargs -n 1 -I {} docker stop {}
-            while [[ `docker ps -a | grep Up | wc -l` != 0 ]]; do
-                sleep 1
-            done
             if [[ `dm status` == "Running" ]]; then
+                echo "Stop all exited container..."
+                docker ps -a | tail -n -1 | grep Up | cut -d ' ' -f 1 | xargs -n 1 -I {} docker stop {}
+                while [[ `docker ps -a | grep Up | wc -l` != 0 ]]; do
+                    sleep 1
+                done
                 echo "Shutdown VM..."
                 echo "sudo shutdown -h now" | dm ssh
                 while [[ `dm status` != "Stopped" ]]; do
                     sleep 1
                 done
-                echo Status: `dm status`
             fi
+            echo Status: `dm status`
         }
     fi
     # open in finder

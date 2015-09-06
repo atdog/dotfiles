@@ -50,11 +50,11 @@ if [ `uname` = "Darwin" ]; then
             if [[ `dm status` == "Stopped" ]]; then
                 dm start
             fi
-            echo "Eval env variable..."
+            echo "[1;33mEval env variable...[0m"
             eval "$(dm env)"
-            echo "Start all exited containers..."
+            echo "[1;33mStart all exited containers...[0m"
             docker ps -a | tail -n -1 | grep Exited | cut -d ' ' -f 1 | xargs -n 1 -I {} docker start {}
-            echo "Login Docker image..."
+            echo "[1;33mLogin Docker image...[0m"
             while [[ `docker ps -a | grep Exit | wc -l` != 0 ]]; do
                 sleep 1
             done
@@ -68,18 +68,18 @@ if [ `uname` = "Darwin" ]; then
 
         function dockdown {
             if [[ `dm status` == "Running" ]]; then
-                echo "Stop all running containers..."
+                echo "[1;33mStop all running containers...[0m"
                 docker ps -a | tail -n -1 | grep Up | cut -d ' ' -f 1 | xargs -n 1 -I {} docker stop {}
                 while [[ `docker ps -a | grep Up | wc -l` != 0 ]]; do
                     sleep 1
                 done
-                echo "Shutdown VM..."
+                echo "[1;33mShutdown VM...[0m"
                 echo "sudo shutdown -h now" | dm ssh
                 while [[ `dm status` != "Stopped" ]]; do
                     sleep 1
                 done
             fi
-            echo Status: `dm status`
+            echo "[1;33mStatus: `dm status`[0m"
         }
     fi
     # open in finder

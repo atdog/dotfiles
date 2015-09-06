@@ -51,14 +51,14 @@ if [ `uname` = "Darwin" ]; then
                 dm start
             fi
             echo "Eval env variable..."
-            dminit
+            eval "$(dm env)"
             echo "Start all exited container..."
             docker ps -a | tail -n -1 | grep Exited | cut -d ' ' -f 1 | xargs -n 1 -I {} docker start {}
             echo "Login Docker image..."
             while [[ `docker ps -a | grep Exit | wc -l` != 0 ]]; do
                 sleep 1
             done
-            ssh_docker
+            ssh -p 2222 $(dm ip) -l root
         }
 
         function dockdown {

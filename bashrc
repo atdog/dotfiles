@@ -52,7 +52,7 @@ if [ `uname` = "Darwin" ]; then
             fi
             echo "Eval env variable..."
             eval "$(dm env)"
-            echo "Start all exited container..."
+            echo "Start all exited containers..."
             docker ps -a | tail -n -1 | grep Exited | cut -d ' ' -f 1 | xargs -n 1 -I {} docker start {}
             echo "Login Docker image..."
             while [[ `docker ps -a | grep Exit | wc -l` != 0 ]]; do
@@ -68,7 +68,7 @@ if [ `uname` = "Darwin" ]; then
 
         function dockdown {
             if [[ `dm status` == "Running" ]]; then
-                echo "Stop all exited container..."
+                echo "Stop all running containers..."
                 docker ps -a | tail -n -1 | grep Up | cut -d ' ' -f 1 | xargs -n 1 -I {} docker stop {}
                 while [[ `docker ps -a | grep Up | wc -l` != 0 ]]; do
                     sleep 1

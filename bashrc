@@ -3,7 +3,7 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 export PATH=/usr/local/bin:${PATH}:/Users/atdog/bin:/usr/local/sbin
 export PATH=.:$PATH
-export PYTHONPATH=/Library/Python/2.7/site-packages
+#export PYTHONPATH=/Library/Python/2.7/site-packages
 export ARCHFLAGS="-arch x86_64"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -30,7 +30,7 @@ if [ `uname` = "Darwin" ]; then
     #
     export PATH=~/bin:$PATH
     export EDITOR=vim
-    export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+    #export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
     export TOR="127.0.0.1:9050"
     alias cls="printf \"\033c\""
     # bash_completion
@@ -130,7 +130,7 @@ if [ $TERM == "xterm-color" -o $TERM == "xterm-256color" ]; then
 fi
 
 [[ -e $HOME/.pyenv/ ]] && export PYENV_ROOT="$HOME/.pyenv"
-[[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/versions/2.7.9/bin:$PATH"
+[[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/versions/2.7.10/bin:$PATH"
 [[ -e $HOME/.pyenv/ ]] && eval "$(pyenv init -)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"

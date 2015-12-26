@@ -19,6 +19,9 @@
 .gdbinit:
 	ln -s ${HOME}/.rcfiles/gdbinit ${HOME}/.gdbinit
 
+.zshrc:
+	ln -s ${HOME}/.rcfiles/zshrc ${HOME}/.zshrc
+
 .vimrc:
 	mkdir -p ${HOME}/.vim/bundle
 	mkdir -p ${HOME}/.vim/temp
@@ -41,4 +44,4 @@ clean:
 	rm -rf ${HOME}/.tmux.conf
 	rm -rf ${HOME}/.gdbinit
 
-basic: clean .bashrc .gitconfig .vimrc .tmux.conf .gdbinit
+basic: clean .zshrc .gitconfig .vimrc .tmux.conf .gdbinit

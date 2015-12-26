@@ -109,3 +109,6 @@ alias la="ls --color=auto -a"
 alias ls="ls --color=auto -GF"
 alias sl="ls --color=auto -GF"
 alias cls="printf \"\033c\""
+
+hash -d ctf="/Users/atdog/Desktop/work/workspace/ctf/"
+hash -d des="/Users/atdog/Desktop/"

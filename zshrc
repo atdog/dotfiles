@@ -112,3 +112,13 @@ alias cls="printf \"\033c\""
 
 hash -d ctf="/Users/atdog/Desktop/work/workspace/ctf/"
 hash -d des="/Users/atdog/Desktop/"
+
+if [ `uname` = "Darwin" ]; then
+    function o {
+        if [ -n "$*" ]; then
+            open "$*"
+        else
+            open .
+        fi
+    }
+fi

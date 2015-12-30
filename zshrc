@@ -1,5 +1,9 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/Users/atdog/.oh-my-zsh
+if [ `uname` = "Darwin" ]; then
+    export ZSH=/Users/atdog/.oh-my-zsh
+else
+    export ZSH=/home/atdog/.oh-my-zsh
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

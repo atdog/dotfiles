@@ -20,6 +20,8 @@
 	ln -s ${HOME}/.rcfiles/gdbinit ${HOME}/.gdbinit
 
 .zshrc:
+	wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+	rm ~/.zshrc
 	ln -s ${HOME}/.rcfiles/zshrc ${HOME}/.zshrc
 
 .vimrc:

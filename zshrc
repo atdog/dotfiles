@@ -1,58 +1,13 @@
-# Path to your oh-my-zsh installation.
 if [ `uname` = "Darwin" ]; then
     export ZSH=/Users/atdog/.oh-my-zsh
 else
     export ZSH=/home/atdog/.oh-my-zsh
 fi
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
     autojump
@@ -62,37 +17,43 @@ plugins=(
 )
 
 # User configuration
+if [ `uname` = "Darwin" ]; then
+    # for gnu
+    path=(
+        /usr/local/opt/gnu-sed/libexec/gnubin
+        /usr/local/opt/coreutils/libexec/gnubin
+        $path
+    )
+    manpath+=(
+        /usr/local/opt/gnu-sed/libexec/gnuman
+        /usr/local/opt/coreutils/libexec/gnuman
+    )
+    function o {
+        if [ -n "$*" ]; then
+            open "$*"
+        else
+            open .
+        fi
+    }
+    hash -d ctf="/Users/atdog/Desktop/work/workspace/ctf/"
+    hash -d des="/Users/atdog/Desktop/"
+fi
 
-export PATH="/Users/atdog/.rvm/gems/ruby-2.2.3/bin:/Users/atdog/.rvm/gems/ruby-2.2.3@global/bin:/Users/atdog/.rvm/rubies/ruby-2.2.3/bin:/Users/atdog/.pyenv/shims:/Users/atdog/.pyenv/versions/2.7.10/bin:/Users/atdog/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/Users/atdog/Android/ndk:/Users/atdog/Android/sdk/platform-tools:/Users/atdog/Android/sdk/tools:/Users/atdog/Android/sdk/build-tools/21.1.2:.:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/atdog/bin:/usr/local/sbin:/Users/atdog/.rvm/bin:/Users/atdog/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+path+=(
+    /usr/local/bin
+    /usr/local/sbin
+    ~/bin
+)
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# brew
+export HOMEBREW_GITHUB_API_TOKEN=580935a06ff3cf61185eac63dc2c0486c57daaa4
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Language
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 eval my_gray='$FG[237]'
 RPROMPT='$my_gray%n@%m%{$reset_color%}%'
 
@@ -101,6 +62,10 @@ setopt autocd
 
 # for ls color
 eval `dircolors $HOME/.rcfiles/dircolors.256dark`
+
+# editor
+export SVN_EDITOR=vim
+export EDITOR=vim
 
 # for 256 color
 export TERM="xterm-256color"
@@ -116,15 +81,20 @@ alias ls="ls --color=auto -GF"
 alias sl="ls --color=auto -GF"
 alias cls="printf \"\033c\""
 
-hash -d ctf="/Users/atdog/Desktop/work/workspace/ctf/"
-hash -d des="/Users/atdog/Desktop/"
+# pyenv & rvm
+[[ -e $HOME/.pyenv/ ]] && export PYENV_ROOT="$HOME/.pyenv"
+[[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/versions/2.7.10/bin:$PATH"
+[[ -e $HOME/.pyenv/ ]] && eval "$(pyenv init -)"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-if [ `uname` = "Darwin" ]; then
-    function o {
-        if [ -n "$*" ]; then
-            open "$*"
-        else
-            open .
-        fi
-    }
-fi
+
+# colorful man page
+export PAGER="`which less` -s"
+export BROWSER="$PAGER"
+export LESS_TERMCAP_mb=$'\E[38;5;167m' # begin blinking
+export LESS_TERMCAP_md=$'\E[38;5;39m' # begin bold
+export LESS_TERMCAP_me=$'\E[0m' # end mode
+export LESS_TERMCAP_se=$'\E[38;5;231m' # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;167m' # begin standout-mode - info box
+export LESS_TERMCAP_us=$'\E[38;5;167m' # begin underline
+export LESS_TERMCAP_ue=$'\E[0m' # end underline

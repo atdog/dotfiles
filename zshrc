@@ -98,3 +98,6 @@ export LESS_TERMCAP_se=$'\E[38;5;231m' # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;167m' # begin standout-mode - info box
 export LESS_TERMCAP_us=$'\E[38;5;167m' # begin underline
 export LESS_TERMCAP_ue=$'\E[0m' # end underline
+
+bindkey '^R' history-incremental-search-backward
+bindkey '^V' history-incremental-search-forward

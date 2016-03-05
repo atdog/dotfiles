@@ -28,6 +28,7 @@ if [ `uname` = "Darwin" ]; then
         /usr/local/opt/gnu-sed/libexec/gnuman
         /usr/local/opt/coreutils/libexec/gnuman
     )
+    fpath=(/usr/local/share/zsh-completions $fpath)
     function o {
         if [ -n "$*" ]; then
             open "$*"
@@ -98,7 +99,7 @@ export LESS_TERMCAP_se=$'\E[38;5;231m' # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;167m' # begin standout-mode - info box
 export LESS_TERMCAP_us=$'\E[38;5;167m' # begin underline
 export LESS_TERMCAP_ue=$'\E[0m' # end underline
-export HOMEBREW_GITHUB_API_TOKEN=32f6ec579a238c5ebdf4313d433b8687fcc228e1
+export HOMEBREW_GITHUB_API_TOKEN=b04edb69edd78816814c3b720b95ae3ee4374e4b
 
 bindkey '^R' history-incremental-search-backward
 bindkey '^V' history-incremental-search-forward

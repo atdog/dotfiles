@@ -65,7 +65,7 @@ set nu
 
 " 256 colors
 set t_Co=256
-colorscheme atdog
+colorscheme onedark
 
 " Set tab
 " Replace tab with space
@@ -135,7 +135,7 @@ set magic
 "function! SAVE_SESSION()
 "    " save session to sessdir
 "    silent execute "mksession! " . GET_SESSION_FILE()
-"    silent execute '!echo colorscheme atdog >> ' . GET_SESSION_FILE()
+"    silent execute '!echo colorscheme atom-dark >> ' . GET_SESSION_FILE()
 "endfunction
 "
 "function! LOAD_SESSION()
@@ -268,7 +268,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui_running")
     " set colors
-    colors atdog
+    colors atom-dark
     set cursorline
     set guifont=Source\ Code\ Pro\ Light:h16
 

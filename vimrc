@@ -31,6 +31,7 @@ let mapleader = ","
 
 " Syntax enable
 syntax on
+set synmaxcol=100
 
 " Get out of VI's compatible mode
 set nocompatible

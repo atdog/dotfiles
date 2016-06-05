@@ -27,7 +27,7 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set <LEADER>
-let mapleader = ","
+"let mapleader = ","
 
 " Syntax enable
 syntax on

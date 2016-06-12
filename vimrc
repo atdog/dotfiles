@@ -27,7 +27,8 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set <LEADER>
-"let mapleader = ","
+let mapleader = "\<tab>"
+"
 
 " Syntax enable
 syntax on
@@ -363,14 +364,14 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " encoding change hotkey
-noremap <LEADER>b :e ++enc=big5<CR>:set tenc=big5<CR>:set fenc=big5<CR>
+noremap ,b :e ++enc=big5<CR>:set tenc=big5<CR>:set fenc=big5<CR>
 
 " NERD tree tab
-noremap <LEADER>n :NERDTreeTabsToggle<CR>
+noremap ,n :NERDTreeTabsToggle<CR>
 
 "gundo
 let g:gundo_right=1
-nnoremap <LEADER>r :GundoToggle<CR>
+nnoremap ,r :GundoToggle<CR>
 
 " air line
 let g:airline_theme='wombat'

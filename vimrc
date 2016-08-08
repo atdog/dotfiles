@@ -32,7 +32,7 @@ let mapleader = "\<tab>"
 
 " Syntax enable
 syntax on
-set synmaxcol=100
+set synmaxcol=200
 
 " Get out of VI's compatible mode
 set nocompatible

@@ -105,3 +105,5 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^V' history-incremental-search-forward
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1

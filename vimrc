@@ -21,6 +21,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'aceofall/gtags.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -390,3 +391,11 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
 
 " autopairs
 let g:AutoPairsShortcutFastWrap = '<C-w>'
+
+" gtags
+set cscopetag " 使用 cscope 作为 tags 命令
+set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
+
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1

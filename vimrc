@@ -334,14 +334,14 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " encoding change hotkey
-noremap ,b :e ++enc=big5<CR>:set tenc=big5<CR>:set fenc=big5<CR>
+noremap <LEADER>b :e ++enc=big5<CR>:set tenc=big5<CR>:set fenc=big5<CR>
 
 " NERD tree tab
-noremap ,n :NERDTreeTabsToggle<CR>
+noremap <LEADER>n :NERDTreeTabsToggle<CR>
 
 "gundo
 let g:gundo_right=1
-nnoremap ,r :GundoToggle<CR>
+nnoremap <LEADER>r :GundoToggle<CR>
 
 " air line
 let g:airline_theme='wombat'

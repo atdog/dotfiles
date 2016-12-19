@@ -543,3 +543,5 @@ delf s:grey_color
 delf s:grey_level
 delf s:grey_number
 " }}}
+
+highlight ModeMsg      term=bold cterm=bold ctermfg=86 gui=bold guibg=#2c2c2c guifg=#40f0d0

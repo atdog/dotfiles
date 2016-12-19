@@ -7,21 +7,28 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Plugin
 "   github:  xxx/abc
-Plugin 'ervandew/supertab'
 "   vim-script:  abc
+Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'vim-scripts/taglist.vim.git'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/AnsiEsc.vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-endwise'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'Yggdroot/indentLine'
+" python autocomplete
+Plugin 'davidhalter/jedi-vim'
+" source code trace
+Plugin 'vim-scripts/taglist.vim.git'
+Plugin 'majutsushi/tagbar'
 Plugin 'aceofall/gtags.vim'
+Plugin 'chazy/cscope_maps'
+" airline
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" show git info in airline
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -206,7 +213,7 @@ set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 " 設定輸出到 terminal 的編碼
 set termencoding=utf-8
 " 將 unicode 中不確定的字符表示成雙字符，在 unicode 下才有用
-set ambiwidth=double
+"set ambiwidth=double
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For tab configuration
@@ -269,44 +276,6 @@ else
     hi TabLineFill  cterm=NONE      ctermfg=white      ctermbg=darkgrey
     hi TabLineSel   cterm=NONE      ctermfg=white      ctermbg=0
 endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mac vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("gui_running")
-    " set colors
-    colors atom-dark
-    set cursorline
-    set guifont=Source\ Code\ Pro\ Light:h16
-
-    " window size
-    set lines=100
-    set columns=90
-
-    " hide tool bar
-    set guioptions+=c
-    set guioptions-=e
-    set guioptions-=T
-    set guioptions-=m
-    set guioptions-=r
-    set guioptions-=R
-    set guioptions-=l
-    set guioptions-=L
-
-    " disable input manager
-    set imdisable
-    set antialias
-
-    if has("gui_macvim")
-        " set CMD+ENTER fullscreen
-        set fuopt=maxhorz,maxvert
-        " for eclim <cmd + shift + L>
-        "map <D-L> :ProjectList<CR>
-        "map <D-C> :ProjectCreate
-        "map <D-E> :ProjectTree<CR>
-        "map <D-D> :ProjectDelete
-    endif
-endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mapping
@@ -382,13 +351,6 @@ let g:airline_powerline_fonts = 1
 " set status line
 set laststatus=2
 
-" The Vim documentation suggests adding set secure as the last line in your
-" vimrc.
-set secure
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-
 " autopairs
 let g:AutoPairsShortcutFastWrap = '<C-w>'
 
@@ -399,3 +361,11 @@ set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
 let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
+
+" Vim
+let g:indentLine_color_term = 239
+let g:indentLine_enabled = 1
+
+" The Vim documentation suggests adding set secure as the last line in your
+" vimrc.
+set secure

@@ -362,9 +362,11 @@ let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
 
-" Vim
+" indentLine
 let g:indentLine_color_term = 239
 let g:indentLine_enabled = 1
+" native support
+set list lcs=tab:⇢\ 
 
 " The Vim documentation suggests adding set secure as the last line in your
 " vimrc.

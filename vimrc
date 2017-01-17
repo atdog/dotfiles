@@ -21,9 +21,10 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'davidhalter/jedi-vim'
 " source code trace
 Plugin 'vim-scripts/taglist.vim.git'
-Plugin 'majutsushi/tagbar'
 Plugin 'aceofall/gtags.vim'
-Plugin 'chazy/cscope_maps'
+Plugin 'ronakg/quickr-cscope.vim'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'chazy/cscope_maps'
 " airline
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -356,11 +357,17 @@ let g:AutoPairsShortcutFastWrap = '<C-w>'
 
 " gtags
 set cscopetag " 使用 cscope 作为 tags 命令
-set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
+"set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
 
-let GtagsCscope_Auto_Load = 1
-let CtagsCscope_Auto_Map = 1
-let GtagsCscope_Quiet = 1
+let g:quickr_cscope_program = "gtags-cscope"
+let g:quickr_cscope_db_file = "GTAGS"
+let g:quickr_cscope_use_qf_g = 1
+
+nmap <C-t> <C-^>
+
+"let GtagsCscope_Auto_Load = 1
+"let CtagsCscope_Auto_Map = 1
+"let GtagsCscope_Quiet = 1
 
 " indentLine
 let g:indentLine_color_term = 239

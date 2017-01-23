@@ -357,17 +357,17 @@ let g:AutoPairsShortcutFastWrap = '<C-w>'
 
 " gtags
 set cscopetag " 使用 cscope 作为 tags 命令
-"set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
+set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
 
 let g:quickr_cscope_program = "gtags-cscope"
 let g:quickr_cscope_db_file = "GTAGS"
 let g:quickr_cscope_use_qf_g = 1
 
-nmap <C-t> <C-^>
+nmap <C-t> <C-o>
 
-"let GtagsCscope_Auto_Load = 1
-"let CtagsCscope_Auto_Map = 1
-"let GtagsCscope_Quiet = 1
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
 
 " indentLine
 let g:indentLine_color_term = 239

@@ -1,8 +1,4 @@
-if [ `uname` = "Darwin" ]; then
-    export ZSH=/Users/atdog/.oh-my-zsh
-else
-    export ZSH=/home/atdog/.oh-my-zsh
-fi
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
@@ -12,9 +8,13 @@ plugins=(
     git
     autojump
     rvm
-    pyenv
     zsh-completions
 )
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # User configuration
 if [ `uname` = "Darwin" ]; then
@@ -36,8 +36,8 @@ if [ `uname` = "Darwin" ]; then
             open .
         fi
     }
-    hash -d ctf="/Users/atdog/Desktop/work/workspace/ctf/"
-    hash -d des="/Users/atdog/Desktop/"
+    hash -d ctf="$HOME/Desktop/work/workspace/ctf/"
+    hash -d des="$HOME/Desktop/"
 fi
 
 path+=(
@@ -49,7 +49,6 @@ path+=(
 source $ZSH/oh-my-zsh.sh
 
 # brew
-export HOMEBREW_GITHUB_API_TOKEN=580935a06ff3cf61185eac63dc2c0486c57daaa4
 
 # Language
 export LANG="en_US.UTF-8"
@@ -82,13 +81,6 @@ alias ls="ls --color=auto -GF"
 alias sl="ls --color=auto -GF"
 alias cls="printf \"\033c\""
 
-# pyenv & rvm
-[[ -e $HOME/.pyenv/ ]] && export PYENV_ROOT="$HOME/.pyenv"
-[[ -e $HOME/.pyenv/ ]] && export PATH="$PYENV_ROOT/versions/2.7.10/bin:$PATH"
-[[ -e $HOME/.pyenv/ ]] && eval "$(pyenv init -)"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-
 # colorful man page
 export PAGER="`which less` -s"
 export BROWSER="$PAGER"
@@ -99,11 +91,8 @@ export LESS_TERMCAP_se=$'\E[38;5;231m' # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;167m' # begin standout-mode - info box
 export LESS_TERMCAP_us=$'\E[38;5;167m' # begin underline
 export LESS_TERMCAP_ue=$'\E[0m' # end underline
-export HOMEBREW_GITHUB_API_TOKEN=b04edb69edd78816814c3b720b95ae3ee4374e4b
 
 bindkey '^R' history-incremental-search-backward
 bindkey '^V' history-incremental-search-forward
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
-
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1

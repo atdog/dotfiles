@@ -15,7 +15,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-endwise'
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'
 Plugin 'Yggdroot/indentLine'
 " python autocomplete
 Plugin 'davidhalter/jedi-vim'

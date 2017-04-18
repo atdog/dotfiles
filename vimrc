@@ -2,36 +2,34 @@
 " vundle settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 " Plugin
 "   github:  xxx/abc
 "   vim-script:  abc
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'vim-scripts/AnsiEsc.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-endwise'
-"Plugin 'jiangmiao/auto-pairs'
-Plugin 'Yggdroot/indentLine'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdcommenter'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-endwise'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
 " python autocomplete
-Plugin 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 " source code trace
-Plugin 'vim-scripts/taglist.vim.git'
-Plugin 'aceofall/gtags.vim'
-Plugin 'ronakg/quickr-cscope.vim'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'chazy/cscope_maps'
+Plug 'vim-scripts/taglist.vim'
+Plug 'aceofall/gtags.vim'
+Plug 'ronakg/quickr-cscope.vim'
+"Plug 'majutsushi/tagbar'
+"Plug 'chazy/cscope_maps'
 " airline
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " show git info in airline
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

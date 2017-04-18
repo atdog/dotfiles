@@ -1,3 +1,7 @@
+- shell:
+    # setup prezto
+    - rm -rf ~/.zprezto && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
 - clean: ['~']
 
 - defaults:
@@ -20,13 +24,13 @@
 
     # zsh
     ~/.zshrc: config/zshrc
+    ~/.zpreztorc: config/zpreztorc
+    ~/.zprezto/modules/prompt/functions/prompt_wikimatze_setup: config/prompt_wikimatze_setup
 
     # mpv
     ~/.config/mpv/mpv.conf: config/mpv.conf
 
 - shell:
-    # setup oh-my-zsh
-    - wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
     # setup vim
     -
         command: setup/vim.sh

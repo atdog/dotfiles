@@ -1,20 +1,4 @@
-export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="robbyrussell"
-
-HIST_STAMPS="mm/dd/yyyy"
-
-plugins=(
-    git
-    autojump
-    rvm
-    zsh-completions
-)
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 # User configuration
 if [ `uname` = "Darwin" ]; then
@@ -45,30 +29,18 @@ path+=(
     /usr/local/sbin
     ~/bin
 )
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-source $ZSH/oh-my-zsh.sh
-
-# brew
-
-# Language
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-
-eval my_gray='$FG[237]'
-RPROMPT='$my_gray%n@%m%{$reset_color%}%'
-
-# change dir without cd
-setopt autocd
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # for ls color
 eval `dircolors ${HOME}/.dotfiles/config/dircolors.256dark`
 
-# editor
-export SVN_EDITOR=vim
-export EDITOR=vim
-
-# for 256 color
-export TERM="xterm-256color"
+bindkey '^V' history-incremental-search-forward
 
 # alias
 alias rm="rm -i"
@@ -81,20 +53,26 @@ alias ls="ls --color=auto -GF"
 alias sl="ls --color=auto -GF"
 alias cls="printf \"\033c\""
 
-# colorful man page
-export PAGER="`which less` -s"
-export BROWSER="$PAGER"
-export LESS_TERMCAP_mb=$'\E[38;5;167m' # begin blinking
-export LESS_TERMCAP_md=$'\E[38;5;39m' # begin bold
-export LESS_TERMCAP_me=$'\E[0m' # end mode
-export LESS_TERMCAP_se=$'\E[38;5;231m' # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;167m' # begin standout-mode - info box
-export LESS_TERMCAP_us=$'\E[38;5;167m' # begin underline
-export LESS_TERMCAP_ue=$'\E[0m' # end underline
+if [ $commands[autojump] ]; then # check if autojump is installed
+  if [ -f $HOME/.autojump/etc/profile.d/autojump.zsh ]; then # manual user-local installation
+    . $HOME/.autojump/etc/profile.d/autojump.zsh
+  elif [ -f $HOME/.autojump/share/autojump/autojump.zsh ]; then # another manual user-local installation
+    . $HOME/.autojump/share/autojump/autojump.zsh
+  elif [ -f $HOME/.nix-profile/etc/profile.d/autojump.zsh ]; then # nix installation
+    . $HOME/.nix-profile/etc/profile.d/autojump.zsh
+  elif [ -f /usr/share/autojump/autojump.zsh ]; then # debian and ubuntu package
+    . /usr/share/autojump/autojump.zsh
+  elif [ -f /etc/profile.d/autojump.zsh ]; then # manual installation
+    . /etc/profile.d/autojump.zsh
+  elif [ -f /etc/profile.d/autojump.sh ]; then # gentoo installation
+    . /etc/profile.d/autojump.sh
+  elif [ -f /usr/local/share/autojump/autojump.zsh ]; then # freebsd installation
+    . /usr/local/share/autojump/autojump.zsh
+  elif [ -f /opt/local/etc/profile.d/autojump.zsh ]; then # mac os x with ports
+    . /opt/local/etc/profile.d/autojump.zsh
+  elif [ $commands[brew] -a -f `brew --prefix`/etc/autojump.sh ]; then # mac os x with brew
+    . `brew --prefix`/etc/autojump.sh
+  fi
+fi
 
-bindkey '^R' history-incremental-search-backward
-bindkey '^V' history-incremental-search-forward
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# brew

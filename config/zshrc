@@ -53,7 +53,6 @@ alias ls="ls --color=auto -GF"
 alias sl="ls --color=auto -GF"
 alias cls="printf \"\033c\""
 
-source ~/.dotfiles/config/zsh/history.zsh
 source ~/.dotfiles/config/zsh/autojump.zsh
 
 # brew

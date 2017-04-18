@@ -21,8 +21,13 @@
     # zsh
     ~/.zshrc: config/zshrc
 
+    # mpv
+    ~/.config/mpv/mpv.conf: config/mpv.conf
+
 - shell:
+    # setup oh-my-zsh
     - wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+    # setup vim
     -
         command: setup/vim.sh
         stdin: true

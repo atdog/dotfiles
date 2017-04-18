@@ -1,38 +1,38 @@
 .cshrc:
-	ln -s ${HOME}/.rcfiles/cshrc ${HOME}/.cshrc
+	ln -s ${HOME}/.dotfiles/cshrc ${HOME}/.cshrc
 
 .bashrc:
-	ln -s ${HOME}/.rcfiles/bashrc ${HOME}/.bashrc 
+	ln -s ${HOME}/.dotfiles/bashrc ${HOME}/.bashrc 
 	
 .muttrc:
-	ln -s ${HOME}/.rcfiles/muttrc ${HOME}/.muttrc 
+	ln -s ${HOME}/.dotfiles/muttrc ${HOME}/.muttrc 
 
 .screenrc:
-	ln -s ${HOME}/.rcfiles/screenrc ${HOME}/.screenrc 
+	ln -s ${HOME}/.dotfiles/screenrc ${HOME}/.screenrc 
 
 .tmux.conf:
-	ln -s ${HOME}/.rcfiles/tmux.conf ${HOME}/.tmux.conf
+	ln -s ${HOME}/.dotfiles/tmux.conf ${HOME}/.tmux.conf
 
 .gitconfig:
-	ln -s ${HOME}/.rcfiles/gitconfig ${HOME}/.gitconfig
+	ln -s ${HOME}/.dotfiles/gitconfig ${HOME}/.gitconfig
 
 .gdbinit:
-	ln -s ${HOME}/.rcfiles/gdbinit ${HOME}/.gdbinit
+	ln -s ${HOME}/.dotfiles/gdbinit ${HOME}/.gdbinit
 
 .zshrc:
 	wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 	rm ~/.zshrc
-	ln -s ${HOME}/.rcfiles/zshrc ${HOME}/.zshrc
+	ln -s ${HOME}/.dotfiles/zshrc ${HOME}/.zshrc
 
 .vimrc:
-	mkdir -p ${HOME}/.vim/bundle
 	mkdir -p ${HOME}/.vim/temp
 	mkdir -p ${HOME}/.vim/undo
 	mkdir -p ${HOME}/.vim/session
 	mkdir -p ${HOME}/.vim/backup
-	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
-	ln -s ${HOME}/.rcfiles/vimrc ${HOME}/.vimrc
-	ln -s ${HOME}/.rcfiles/vimcolors ${HOME}/.vim/colors
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	ln -s ${HOME}/.dotfiles/vimrc ${HOME}/.vimrc
+	ln -s ${HOME}/.dotfiles/vimcolors ${HOME}/.vim/colors
 	vim +PlugInstall +qall
 
 clean:

@@ -32,10 +32,15 @@ path+=(
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+export PATH="$PYENV_ROOT/shims:$PATH"
+
+pyenv() {
+    eval "$(command pyenv init -)"
+    pyenv "$@"
+}
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # for ls color
 eval `dircolors ${HOME}/.dotfiles/config/dircolors.256dark`

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-git clone git@github.com:atdog/dotfiles.git ~/.dotfiles
+git clone https://github.com/atdog/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ./install

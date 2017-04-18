@@ -1,0 +1,30 @@
+- clean: ['~']
+
+- defaults:
+    link:
+        relink: true
+
+- link:
+    # tmux
+    ~/.tmux.conf: config/tmux.conf
+
+    # vim
+    ~/.vimrc: config/vimrc
+    ~/.vim: config/vim
+
+    # git
+    ~/.gitconfig: config/gitconfig
+
+    # gdb
+    ~/.gdbinit: config/gdbinit
+
+    # zsh
+    ~/.zshrc: config/zshrc
+
+- shell:
+    - wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+    -
+        command: setup/vim.sh
+        stdin: true
+        stdout: true
+        stderr: true

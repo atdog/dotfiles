@@ -61,7 +61,7 @@ RPROMPT='$my_gray%n@%m%{$reset_color%}%'
 setopt autocd
 
 # for ls color
-eval `dircolors $HOME/.rcfiles/dircolors.256dark`
+eval `dircolors $HOME/.dotfiles/dircolors.256dark`
 
 # editor
 export SVN_EDITOR=vim
@@ -96,3 +96,5 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^V' history-incremental-search-forward
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

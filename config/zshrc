@@ -61,7 +61,7 @@ RPROMPT='$my_gray%n@%m%{$reset_color%}%'
 setopt autocd
 
 # for ls color
-eval `dircolors $HOME/.dotfiles/dircolors.256dark`
+eval `dircolors ${HOME}/.dotfiles/config/dircolors.256dark`
 
 # editor
 export SVN_EDITOR=vim

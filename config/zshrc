@@ -66,6 +66,7 @@ alias la="ls --color=auto -a"
 alias ls="ls --color=auto -GF"
 alias sl="ls --color=auto -GF"
 alias cls="printf \"\033c\""
+alias -- '-'='cd -'
 
 source ~/.dotfiles/config/zsh/autojump.zsh
 

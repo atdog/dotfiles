@@ -9,6 +9,9 @@
         relink: true
 
 - link:
+    # bin
+    ~/bin: bin
+
     # tmux
     ~/.tmux.conf: config/tmux.conf
 

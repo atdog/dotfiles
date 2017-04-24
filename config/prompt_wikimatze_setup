@@ -21,6 +21,9 @@ function prompt_wikimatze_setup {
       "%F{215}" # Light Orange
       "%F{166}" # Orange - not used
       "%F{119}" # Pastel Limegreen
+      "%F{141}" # Purple
+      "%F{221}" # Yellow
+      "%F{249}" # Grey
     )
   else
     _prompt_mseri_colors=(
@@ -29,6 +32,9 @@ function prompt_wikimatze_setup {
       "%F{yellow}"
       "%F{red}"
       "%F{green}"
+      "%F{purple}"
+      "%F{yellow}"
+      "%F{grey}"
     )
   fi
 
@@ -44,11 +50,11 @@ function prompt_wikimatze_setup {
   zstyle ':prezto:module:git:info:untracked' format ' %%B%F{white}◼%f%%b'
 
   zstyle ':prezto:module:git:info:keys' format \
-      'prompt' ' %F{green}(%f$(coalesce "%b" "%p" "%c")${git_info[rprompt]}%s%F{green})%f' \
+      'prompt' '%F{green}(%f$(coalesce "%b" "%p" "%c")${git_info[rprompt]}%s%F{green} )%f' \
       'rprompt' '%A%B%S%C%D%U%u'
 
   # Define prompts.
-  PROMPT="${_prompt_mseri_colors[3]}%n%f@${_prompt_mseri_colors[2]}%m%f ${_prompt_mseri_colors[5]}%c%f"'${(e)git_info[prompt]}'" » "
+  PROMPT="${_prompt_mseri_colors[8]}%m%f [${_prompt_mseri_colors[7]}%c%f] "'${(e)git_info[prompt]}'" ${_prompt_mseri_colors[6]}➟%f "
   RPROMPT=''
 
 }

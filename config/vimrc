@@ -344,7 +344,6 @@ let g:airline_powerline_fonts = 1
 
 " True colors
 set termguicolors     " enable true colors support
-let ayucolor="dark"   " for dark version of theme
 colorscheme jellybeans
 
 " set status line

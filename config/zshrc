@@ -70,4 +70,6 @@ alias -- '-'='cd -'
 
 source ~/.dotfiles/config/zsh/autojump.zsh
 
+unsetopt correct
+
 # brew

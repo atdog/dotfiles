@@ -13,16 +13,12 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-endwise'
-"Plug 'jiangmiao/auto-pairs'
-Plug 'Yggdroot/indentLine'
 " python autocomplete
 Plug 'davidhalter/jedi-vim'
 " source code trace
 Plug 'vim-scripts/taglist.vim'
 Plug 'aceofall/gtags.vim'
 Plug 'ronakg/quickr-cscope.vim'
-"Plug 'majutsushi/tagbar'
-"Plug 'chazy/cscope_maps'
 " airline
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -77,7 +73,6 @@ set nu
 
 " 256 colors
 set t_Co=256
-colorscheme onedark
 
 " Set tab
 " Replace tab with space
@@ -347,6 +342,11 @@ let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" True colors
+set termguicolors     " enable true colors support
+let ayucolor="dark"   " for dark version of theme
+colorscheme jellybeans
+
 " set status line
 set laststatus=2
 
@@ -370,8 +370,6 @@ let GtagsCscope_Quiet = 1
 " indentLine
 let g:indentLine_color_term = 239
 let g:indentLine_enabled = 1
-" native support
-set list lcs=tab:⇢\ 
 
 " The Vim documentation suggests adding set secure as the last line in your
 " vimrc.

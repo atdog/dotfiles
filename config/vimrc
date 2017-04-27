@@ -35,7 +35,7 @@ let mapleader = "\<tab>"
 
 " Syntax enable
 syntax on
-set synmaxcol=200
+set synmaxcol=80
 
 " Get out of VI's compatible mode
 set nocompatible
@@ -338,7 +338,7 @@ let g:gundo_right=1
 nnoremap ,r :GundoToggle<CR>
 
 " air line
-let g:airline_theme='wombat'
+let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -365,10 +365,6 @@ nmap <C-t> <C-o>
 let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
-
-" indentLine
-let g:indentLine_color_term = 239
-let g:indentLine_enabled = 1
 
 " The Vim documentation suggests adding set secure as the last line in your
 " vimrc.

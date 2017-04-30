@@ -1,5 +1,15 @@
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
+path=(
+    ~/bin
+    /usr/local/bin
+    /usr/local/sbin
+    /usr/bin
+    /usr/sbin
+    /sbin
+    /bin
+)
+
 # User configuration
 if [ `uname` = "Darwin" ]; then
     # for gnu
@@ -24,11 +34,6 @@ if [ `uname` = "Darwin" ]; then
     hash -d des="$HOME/Desktop/"
 fi
 
-path+=(
-    /usr/local/bin
-    /usr/local/sbin
-    ~/bin
-)
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

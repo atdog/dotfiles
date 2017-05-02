@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 " Plugin
 "   github:  xxx/abc
 "   vim-script:  abc
-Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'jistr/vim-nerdtree-tabs'

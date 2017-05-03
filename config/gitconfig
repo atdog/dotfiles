@@ -1,6 +1,6 @@
 [user]
-    name = Hung-Chi Su
-    email = atdog.cs96@gmail.com
+    name = john
+    email = john@john-pc.local
 [core]
     editor = vim
 	pager = less -+F

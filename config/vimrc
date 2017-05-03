@@ -22,6 +22,8 @@ Plug 'vim-airline/vim-airline-themes'
 " show git info in airline
 Plug 'tpope/vim-fugitive'
 Plug 'bronson/vim-trailing-whitespace'
+" auto complete
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 filetype plugin indent on

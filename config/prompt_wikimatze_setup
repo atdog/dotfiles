@@ -17,10 +17,13 @@ function prompt_wikimatze_setup {
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     _prompt_mseri_colors=(
       "%F{81}"  # Turquoise
-      "%F{75}"  # Pastel Cyan
+      "%F{87}"  # Pastel Cyan
       "%F{215}" # Light Orange
       "%F{166}" # Orange - not used
       "%F{119}" # Pastel Limegreen
+      "%F{248}" # Grey
+      "%F{196}" # Red
+      "%F{228}" # Yellow
     )
   else
     _prompt_mseri_colors=(
@@ -29,6 +32,9 @@ function prompt_wikimatze_setup {
       "%F{yellow}"
       "%F{red}"
       "%F{green}"
+      "%F{grey}"
+      "%F{red}"
+      "%F{yellow}"
     )
   fi
 
@@ -48,7 +54,7 @@ function prompt_wikimatze_setup {
       'rprompt' ''
 
   # Define prompts.
-  PROMPT="${_prompt_mseri_colors[2]}%m%f ${_prompt_mseri_colors[5]}%c%f"'${(e)git_info[prompt]}'" » "
+  PROMPT="${_prompt_mseri_colors[6]}%m%f ${_prompt_mseri_colors[8]}%c%f"'${(e)git_info[prompt]}'" ${_prompt_mseri_colors[7]}➡%f "
   RPROMPT=''
 
 }

@@ -54,7 +54,7 @@ function prompt_wikimatze_setup {
       'rprompt' ''
 
   # Define prompts.
-  PROMPT="${_prompt_mseri_colors[6]}%m%f ${_prompt_mseri_colors[8]}%c%f"'${(e)git_info[prompt]}'" ${_prompt_mseri_colors[7]}➡%f "
+  PROMPT="${_prompt_mseri_colors[6]}%m%f ${_prompt_mseri_colors[8]}%c%f"'${(e)git_info[prompt]}'" ${_prompt_mseri_colors[7]}➜%f "
   RPROMPT=''
 
 }

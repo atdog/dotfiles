@@ -48,6 +48,7 @@ function prompt_wikimatze_setup {
   zstyle ':prezto:module:git:info:clean' format ' %F{green}✔%f'
   zstyle ':prezto:module:git:info:dirty' format ' %F{red}✗%f'
   zstyle ':prezto:module:git:info:untracked' format ' %%B%F{white}◼%f%%b'
+  zstyle ':prezto:module:git:info:commit' format '${_prompt_mseri_colors[5]}$(echo -n %c | head -c 8)%f'
 
   zstyle ':prezto:module:git:info:keys' format \
       'prompt' ' ($(coalesce "%b" "%p" "%c")${git_info[rprompt]}%s)' \

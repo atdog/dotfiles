@@ -1,6 +1,8 @@
 - shell:
     # setup prezto
     - rm -rf ~/.zprezto && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    - git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    - ~/.fzf/install
 
 - clean: ['~']
 

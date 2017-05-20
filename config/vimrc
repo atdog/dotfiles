@@ -361,7 +361,23 @@ let g:quickr_cscope_program = "gtags-cscope"
 let g:quickr_cscope_db_file = "GTAGS"
 let g:quickr_cscope_use_qf_g = 1
 
+" jumps
 nmap <C-t> <C-o>
+function! GotoJump()
+    jumps
+    let j = input("Please select your jump: ")
+
+    if j !~ '^-\?\d\+$'
+        return
+    endif
+
+    if j[0] == '-'
+        execute "normal " . j . "\<c-o>"
+    else
+        execute "normal " . j . "\<c-i>"
+    endif
+endfunction
+nmap ,j :call GotoJump()<CR>
 
 let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1

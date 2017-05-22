@@ -85,4 +85,3 @@ export GREP_COLOR='38;2;123;200;211'
 export FZF_DEFAULT_OPTS='--height 30% --reverse --border'
 
 # brew
-export HOMEBREW_GITHUB_API_TOKEN=ab963c5e9b9dbf4b9b6f8af1f1ca763cae562cfd

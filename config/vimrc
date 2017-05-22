@@ -388,6 +388,10 @@ let GtagsCscope_Quiet = 1
 " YCM
 set completeopt-=preview
 
+" fzf
+nmap q: :History:<CR>
+nmap q/ :History/<CR>
+
 " The Vim documentation suggests adding set secure as the last line in your
 " vimrc.
 set secure

@@ -68,7 +68,7 @@ set noswapfile
 
 " Vim will change the current working directory whenever you
 "         open a file, switch buffers, delete a buffer or open/close a window
-" set autochdir
+set autochdir
 
 " Set line number
 set nu
@@ -215,8 +215,6 @@ set termencoding=utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For tab configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Always show tab line
-set showtabline=2
 " Last used tab switching
 autocmd TabLeave * let g:LastUsedTabPage = tabpagenr()
 function! SwitchLastUsedTab()
@@ -227,42 +225,11 @@ endfunction
 nmap tt :call SwitchLastUsedTab()<CR>
 
 " Fast tab moving
-for i in range(0, 9)
-    exe "nmap <ESC>" . i . " :tabnext " . (i + 1) . "<CR>"
+for i in range(1, 9)
+    exe "nmap <ESC>" . i . " :tabnext " . i . "<CR>"
 endfor
 
 set switchbuf=usetab
-
-" Tab line format
-function! TabLine()
-    let s = ''
-    for i in range(1, tabpagenr('$'))
-        let hiBG = ((i == tabpagenr()) ? '%#TabLineSel#' : '%#TabLine#')
-        let winnr = tabpagewinnr(i, '$')
-        "let filename = bufname(tabpagebuflist(i)[winnr - 1])
-        let filename = bufname(tabpagebuflist(i)[0])
-        if (filename == 'NERD_Tree_1')
-            let filename = bufname(tabpagebuflist(i)[1])
-        endif
-        if (filename == '')
-            let filename = '=No Name='
-        endif
-        let s .= hiBG . ' '
-        if (winnr > 1)
-            let s .= '[' . (i - 1). '-' . winnr . '] '
-        else
-            let s .= '[' . (i - 1) . '] '
-        endif
-        "let s .= substitute(filename, '.\+\/', '', 'g')
-        let s .= filename
-        let s .= (1 == gettabwinvar(i, 1, '&modified') ? '[+]' : '')
-        let s .= ' '
-        let i += 1
-    exe | endfor
-    let s .= '%#TabLineFill#'
-    return s
-endfunction
-set tabline=%!TabLine()
 
 if &term == "xterm-color" || &term == "xterm-16color"
     hi TabLine      cterm=NONE      ctermfg=grey      ctermbg=darkgrey
@@ -344,6 +311,7 @@ nnoremap ,r :GundoToggle<CR>
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
 
 " True colors
 set termguicolors     " enable true colors support

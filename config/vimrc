@@ -68,7 +68,7 @@ set noswapfile
 
 " Vim will change the current working directory whenever you
 "         open a file, switch buffers, delete a buffer or open/close a window
-set autochdir
+"set autochdir
 
 " Set line number
 set nu

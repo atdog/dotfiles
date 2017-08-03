@@ -85,3 +85,5 @@ export GREP_COLOR='38;2;123;200;211'
 export FZF_DEFAULT_OPTS='--height 30% --reverse --border'
 
 # brew
+# disable zsh
+unsetopt SHARE_HISTORY

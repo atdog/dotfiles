@@ -81,8 +81,7 @@ unsetopt correct
 # grep color code
 export GREP_COLOR='38;2;123;200;211'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 30% --reverse --border'
+[ -f ~/Library/Android/sdk/platform-tools/adb ] && export PATH=~/Library/Android/sdk/platform-tools/:$PATH
 
 # brew
 # disable zsh

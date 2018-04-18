@@ -159,11 +159,10 @@ set cscopeprg='gtags-cscope'
 
 let g:quickr_cscope_program = "gtags-cscope"
 let g:quickr_cscope_db_file = "GTAGS"
-let g:quickr_cscope_use_qf_g = 1
+"let g:quickr_cscope_use_qf_g = 1
 
-nmap <C-T> <C-O>
-nmap <S-N> :cnext<CR>
-nmap <S-P> :cprevious<CR>
+nmap <ESC>. :cnext<CR>
+nmap <ESC>, :cprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM

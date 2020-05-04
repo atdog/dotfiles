@@ -77,6 +77,7 @@ alias vv='vim ~/.vimrc'
 source ~/.dotfiles/config/zsh/autojump.zsh
 
 unsetopt correct
+setopt no_prompt_cr
 
 # grep color code
 export GREP_COLOR='38;2;123;200;211'

@@ -9,6 +9,7 @@
     ci = commit
     st = status
     br = branch
+    lg = log --color --graph --all --abbrev-commit --pretty=format:"%C(#E74E4E)%h%C(reset)\\ -%C(#FFEA65)%d%C(reset)\\ %C(#FFFFFF)%s%C(reset)\\ %C(#FFC78E)(%cr)%C(reset)\\ %C(#8ED3FF)<%an>%C(reset)"
 [color]
     ui = true
 [push]

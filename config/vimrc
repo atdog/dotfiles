@@ -11,7 +11,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-endwise'
-Plug 'valloric/YouCompleteMe'
+"Plug 'valloric/YouCompleteMe'
 " airline
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

@@ -1,0 +1,36 @@
+[
+    {
+        "shell" : [
+            ["rm -rf ~/.zprezto && git clone --recursive https://github.com/sorin-ionescu/prezto.git \"${ZDOTDIR:-$HOME}/.zprezto\"", "Installing zprezto"]
+        ]
+    },
+    {
+        "defaults": {
+            "link": {
+                "relink": true
+            }
+        }
+    },
+    {
+        "clean": ["~"]
+    },
+    {
+        "link": {
+            "~/bin": "bin",
+            "~/.tmux.conf": "config/tmux.conf",
+            "~/.vim": "config/vim",
+            "~/.vimrc": "config/vimrc",
+            "~/.gitconfig": "config/gitconfig",
+            "~/.zshrc": "config/zshrc",
+            "~/.zpreztorc": "config/zpreztorc",
+            "~/.zprezto/modules/prompt/functions/prompt_wikimatze_setup": "config/prompt_wikimatze_setup",
+            "~/.config/mpv/mpv.conf": "config/mpv.conf"
+        }
+    },
+    {
+        "shell": [
+            ["setup/vim.sh", "Installing vim plugin"],
+            ["git submodule update --init --recursive", "Installing submodules"]
+        ]
+    }
+]

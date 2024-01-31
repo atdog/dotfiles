@@ -23,7 +23,7 @@ function prompt_wikimatze_setup {
       "%F{119}" # Pastel Limegreen
       "%F{248}" # Grey
       "%F{196}" # Red
-      "%F{228}" # Yellow
+      "%F{#ffdf99}" # Yellow
     )
   else
     _prompt_mseri_colors=(
@@ -55,7 +55,8 @@ function prompt_wikimatze_setup {
       'rprompt' ''
 
   # Define prompts.
-  PROMPT="${_prompt_mseri_colors[6]}%m%f ${_prompt_mseri_colors[8]}%c%f"'${(e)git_info[prompt]}'" ${_prompt_mseri_colors[7]}➜%f "
+  PROMPT="${_prompt_mseri_colors[6]}%m%f ${_prompt_mseri_colors[8]}%c%f"" %F{#4664ff}❯❯%f "
+#PROMPT="${_prompt_mseri_colors[6]}%m%f ${_prompt_mseri_colors[8]}%c%f"'${(e)git_info[prompt]}'" %F{#4664ff}❯❯%f "
   RPROMPT=''
 
 }

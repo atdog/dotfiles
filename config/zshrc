@@ -42,16 +42,15 @@ fi
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:$PATH"
 
-lazy_laod_pyenv() {
-    unfunction pip pyenv python
+lazy_load_pyenv() {
+    unfunction pyenv
     [ -n "$(which pyenv)" ] && eval "$(pyenv init -)"
 }
-pip()    { lazy_laod_pyenv && $funcstack[1] "$@"; }
-pyenv()  { lazy_laod_pyenv && $funcstack[1] "$@"; }
-python() { lazy_laod_pyenv && $funcstack[1] "$@"; }
+pyenv()  { lazy_load_pyenv && $funcstack[1] "$@"; }
 
 # rvm
 lazy_laod_rvm() {
@@ -74,19 +73,22 @@ alias cp="cp -i"
 alias grep="grep --color"
 alias ll="ls --color=auto -lFah"
 alias la="ls --color=auto -a"
-alias ls="ls --color=auto -GF"
-alias sl="ls --color=auto -GF"
+alias ls="ls --color=auto -G"
+alias sl="ls --color=auto -G"
 alias cls="printf \"\033c\""
 alias -- '-'='cd -'
 alias vv='vim ~/.vimrc'
 
 if [[ $(uname -r) == (#s)*[mM]icrosoft*(#e) ]]; then
-  if grep -iq Microsoft /proc/version; then
-      open()
-      {
-          explorer.exe $(wslpath -w $1)
-      }
-  fi
+    if grep -iq Microsoft /proc/version; then
+        open()
+        {
+            explorer.exe $(wslpath -w $1)
+        }
+        alias o='open'
+        alias adb='adb.exe'
+        alias ncat='ncat.exe'
+    fi
 fi
 
 source ~/.dotfiles/config/zsh/autojump.zsh

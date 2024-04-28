@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+from pathlib import Path
+from rich.progress import Progress
+import os
+import sys
+import lief
+import logging
+import argparse
+
+def setup_logger(verbose):
+    if verbose:
+        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
+            format='%(asctime)s %(levelname)s %(message)s' ,
+            datefmt='%Y/%m/%d %H:%M:%S'
+        )
+    else:
+        logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(message)s')
+
+def main():
+    parser = argparse.ArgumentParser(description="Imported Function Finder")
+    parser.add_argument('elf_binary', type=str, help='Input file path')
+    parser.add_argument('function', type=str, help='Target function name')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Increase output verbosity')
+    args = parser.parse_args()
+
+    rootfs = Path.cwd().as_posix()
+    binary = lief.parse(args.elf_binary)
+
+    setup_logger(args.verbose)
+
+    logging.debug(f"ELF Arch: {binary.header.machine_type}")
+    logging.debug(f"ELF Type: {binary.type}")
+    logging.debug(f"Imported Libraries: {len(binary.libraries)}")
+
+    all_libs = []
+
+    for root, dirs, files in os.walk(rootfs):
+        if "lib" not in root:
+            continue
+
+        libs = set(files).intersection(set(binary.libraries))
+        if len(libs) == 0:
+            continue
+
+        all_libs += [Path(root) / Path(lib) for lib in libs]
+
+    with Progress() as progress:
+        task = progress.add_task("Searching...", total=len(all_libs))
+        progress.console.print(f"Possible Libraries: {len(all_libs)}")
+        for lib in all_libs:
+            handler(progress.console, lib, binary, args.function)
+            progress.advance(task)
+
+def handler(console, path: Path, binary, target):
+    path_str = path.resolve().as_posix()
+    lib = lief.parse(path_str)
+
+    if lib.header.machine_type != binary.header.machine_type:
+        logging.warn("Not the same machine type")
+        return
+
+    if lib.type != binary.type:
+        logging.warn("Not the same binary type")
+        return
+
+    for func in lib.exported_functions:
+        if target == func.name:
+            console.print(f"[bold bright_red]Found[/] [grey74]{path_str}[/]: [sky_blue1]0x{func.address:X}[/] [wheat1]{func.name}[/]")
+
+if __name__ == "__main__":
+    main()

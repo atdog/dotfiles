@@ -56,16 +56,17 @@ def handler(console, path: Path, binary, target):
     lib = lief.parse(path_str)
 
     if lib.header.machine_type != binary.header.machine_type:
-        logging.warn("Not the same machine type")
+        # logging.warn("Not the same machine type")
         return
 
     if lib.type != binary.type:
-        logging.warn("Not the same binary type")
+        # logging.warn("Not the same binary type")
         return
 
     for func in lib.exported_functions:
         if target == func.name:
-            console.print(f"[bold bright_red]Found[/] [grey74]{path_str}[/]: [sky_blue1]0x{func.address:X}[/] [wheat1]{func.name}[/]")
+            console.print(f"[bold bright_red]Found[/] [grey74]{path}[/]: [sky_blue1]0x{func.address:X}[/] [wheat1]{func.name}[/] isSym:{path.is_symlink()}")
+            return
 
 if __name__ == "__main__":
     main()

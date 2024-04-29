@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+from pathlib import Path
+from rich.progress import Progress
+import os
+import sys
+import lief
+import logging
+import argparse
+
+def setup_logger(verbose):
+    lief.logging.disable()
+    if verbose:
+        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
+            format='%(asctime)s %(levelname)s %(message)s' ,
+            datefmt='%Y/%m/%d %H:%M:%S'
+        )
+    else:
+        logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(message)s')
+
+def main():
+    parser = argparse.ArgumentParser(description="Imported Function Finder")
+    parser.add_argument('lib', type=str, help='Target library')
+    parser.add_argument('function', type=str, help='Target function')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Increase output verbosity')
+    args = parser.parse_args()
+
+    setup_logger(args.verbose)
+
+    rootfs = Path.cwd().as_posix()
+    lib_path = Path(args.lib)
+    logging.debug(f"Root FS: {rootfs}")
+    logging.debug(f"Library Path: {lib_path}")
+
+    target_lib = lief.parse(lib_path.resolve().as_posix())
+    logging.debug(f"Library Arch: {target_lib.header.machine_type}")
+    logging.debug(f"Library Type: {target_lib.type}")
+
+    exported = args.function in [func.name for func in target_lib.exported_functions]
+    logging.debug(f"Check whether exported: {exported}")
+
+    all_files = []
+    for root, dirs, files in os.walk(rootfs):
+        if "lib" not in root and "bin" not in root:
+            continue
+        all_files += [Path(root) / Path(file) for file in files]
+
+    with Progress() as progress:
+        task = progress.add_task("Searching...", total=len(all_files))
+        seach_cache = {}
+        for file_path in all_files:
+            path_str = file_path.resolve().as_posix()
+            if path_str in seach_cache:
+                r = seach_cache[path_str]
+            else:
+                r = search(path_str, lib_path, target_lib, args.function)
+                seach_cache[path_str] = r
+            if r:
+                progress.console.print(f"[bold bright_red]Found[/] [grey74]{file_path} isSym:{file_path.is_symlink()}[/]")
+            progress.advance(task)
+
+def search(path: str, lib_path: Path, lib_pe, func_name):
+    cur_bin = lief.parse(path)
+
+    if cur_bin is None:
+        return False
+
+    if lib_path.name not in cur_bin.libraries:
+        return False
+
+    if func_name not in [func.name for func in cur_bin.imported_functions]:
+        return False
+
+    if lib_pe.header.machine_type != cur_bin.header.machine_type:
+        logging.debug("Not the same machine type")
+        return False
+
+    if lib_pe.type != cur_bin.type:
+        logging.debug("Not the same binary type")
+        return False
+
+    return True
+
+if __name__ == "__main__":
+    main()

@@ -204,3 +204,5 @@ endif
 " The Vim documentation suggests adding set secure as the last line in your
 " vimrc.
 set secure
+
+set rtp+=/opt/homebrew/opt/fzf

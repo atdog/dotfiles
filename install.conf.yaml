@@ -1,6 +1,5 @@
 - shell:
     # setup prezto
-    - rm -rf ~/.zprezto && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 - clean: ['~']
 
@@ -23,15 +22,13 @@
     ~/.gitconfig: config/gitconfig
 
     # gdb
-    ~/.gdbinit: config/gdbinit
+    #~/.gdbinit: config/gdbinit
 
     # zsh
     ~/.zshrc: config/zshrc
-    ~/.zpreztorc: config/zpreztorc
-    ~/.zprezto/modules/prompt/functions/prompt_wikimatze_setup: config/prompt_wikimatze_setup
 
     # mpv
-    ~/.config/mpv/mpv.conf: config/mpv.conf
+    #~/.config/mpv/mpv.conf: config/mpv.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -107,11 +107,11 @@ export GREP_COLOR='38;2;123;200;211'
 # brew
 # disable zsh
 unsetopt SHARE_HISTORY
-export PATH="/opt/homebrew/opt/openjdk/bin:/Users/atdog/.docker/bin:$PATH"
+export PATH="/usr/lib/cargo/bin:/home/atdog/.local/bin:$PATH"
 
-eval "$(fzf --zsh)"
+#export FZF_DEFAULT_OPTS='--color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626 --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00 --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf --color=border:#262626,label:#aeaeae,query:#d9d9d9,preview-bg:#1F1F1F --border="rounded" --border-label="" --preview-window="border-rounded" --margin="1" --prompt="> " --marker=">" --pointer="◆" --separator="─" --scrollbar="│" --info="right"'
+export FZF_DEFAULT_OPTS='--color=bg+:#1F1F1F,bg:#111111,border:#222222,spinner:#98BC99,hl:#719872,fg:#D9D9D9,header:#719872,info:#BDBB72,pointer:#E12672,marker:#E17899,fg+:#e9e9e9,preview-bg:#1F1F1F,prompt:#98BEDE,hl+:#98BC99 --border="rounded" --border-label="" --preview-window="border-rounded" --margin="1" --prompt="> " --marker=">" --pointer="◆" --separator="─" --scrollbar="│" --info="right"'
 
-export FZF_DEFAULT_OPTS='--color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626 --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00 --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf --color=border:#262626,label:#aeaeae,query:#d9d9d9 --border="rounded" --border-label="" --preview-window="border-rounded" --margin="1" --prompt="> " --marker=">" --pointer="◆" --separator="─" --scrollbar="│" --info="right"'
 export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
@@ -139,9 +139,13 @@ _fzf_comprun() {
   esac
 }
 
-source ~/.config/fzf-git.sh/fzf-git.sh
+source ~/.dotfiles/fzf-git.sh/fzf-git.sh
 
 export BAT_THEME=Nord
 
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias o="explorer.exe"
